@@ -1,0 +1,1143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Quilters Choose Gammill</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #5a5a5a;
+    --hairline: #d8d8d8;
+    --paper: #ffffff;
+    --soft: #f6f4f1;
+    --accent: #8b6f3f;          /* warm taupe-bronze, very subtle */
+    --display: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
+    --body: 'Open Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --max: 1280px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img { display: block; max-width: 100%; }
+
+  /* ---------- Fixed top bar (tiny, hairline) ---------- */
+  .top-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 40px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--hairline);
+    transition: padding 0.4s ease;
+  }
+  .top-bar .brand {
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .top-bar .brand em {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--muted);
+    margin-left: 12px;
+    font-size: 16px;
+  }
+  .top-bar nav a {
+    margin-left: 28px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .top-bar nav a:hover { color: var(--ink); }
+
+  /* ---------- Side chapter indicator ---------- */
+  .rail {
+    position: fixed;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .rail a {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--ink);
+    opacity: 0.25;
+    transition: opacity 0.3s, width 0.3s;
+  }
+  .rail a:hover { opacity: 0.7; width: 36px; }
+  .rail a.active { opacity: 1; width: 40px; }
+
+  /* ---------- Section base ---------- */
+  section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 40px 80px;
+  }
+  .wrap {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+  }
+
+  /* ---------- Editorial atoms ---------- */
+  .chapter-label {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+  .chapter-label .num {
+    color: var(--accent);
+    margin-right: 12px;
+  }
+
+  h1.display, h2.display {
+    font-family: var(--display);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 0 0 28px;
+    color: var(--ink);
+  }
+  h1.display {
+    font-size: clamp(44px, 7vw, 92px);
+    font-weight: 900;
+  }
+  h2.display {
+    font-size: clamp(34px, 5vw, 68px);
+  }
+  h2.display em {
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .lede {
+    font-family: var(--body);
+    font-weight: 300;
+    font-size: clamp(19px, 1.5vw, 24px);
+    line-height: 1.55;
+    color: #3a3a3a;
+    max-width: 720px;
+    margin: 0 0 36px;
+  }
+
+  p.body {
+    font-size: 17px;
+    line-height: 1.75;
+    color: #2a2a2a;
+    max-width: 580px;
+    margin: 0 0 22px;
+  }
+
+  ul.body {
+    margin: 0 0 28px;
+    padding: 0;
+    list-style: none;
+    max-width: 580px;
+  }
+  ul.body li {
+    position: relative;
+    padding: 14px 0 14px 28px;
+    border-top: 1px solid var(--hairline);
+    font-size: 15px;
+    color: #2a2a2a;
+  }
+  ul.body li:last-child { border-bottom: 1px solid var(--hairline); }
+  ul.body li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 22px;
+    width: 12px; height: 1px;
+    background: var(--accent);
+  }
+  ul.body li strong { font-weight: 600; color: var(--ink); }
+
+  .discover {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 16px;
+    padding: 14px 0;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    transition: gap 0.3s ease, color 0.3s;
+  }
+
+  /* Amber CTA — high-visibility action button (brand color #FAAD3D) */
+  .cta-amber {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+    padding: 18px 34px;
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1a1a1a;
+    background: #FAAD3D;
+    border-radius: 999px;
+    box-shadow: 0 6px 22px rgba(250, 173, 61, 0.35);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  }
+  .cta-amber:hover {
+    background: #F39000;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(243, 144, 0, 0.45);
+  }
+  .cta-amber .arrow {
+    font-size: 18px;
+    letter-spacing: 0;
+    transition: transform 0.22s ease;
+  }
+  .cta-amber:hover .arrow {
+    transform: translateX(4px);
+  }
+  .discover:hover { gap: 20px; color: var(--accent); }
+  .discover .arrow { font-family: var(--display); font-style: italic; font-size: 18px; letter-spacing: 0; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.85) 100%),
+      url('assets/web/candidate-1.jpg') center / cover no-repeat;
+    background-color: #f6f4f1;
+    text-align: center;
+    padding-top: 200px;
+  }
+  .hero .wrap { max-width: 900px; }
+  .hero .chapter-label { color: var(--ink); margin-bottom: 36px; }
+  .hero h1.display { font-size: clamp(54px, 9vw, 132px); margin-bottom: 36px; }
+  .hero .lede { margin: 0 auto 60px; text-align: center; color: #2a2a2a; }
+  .scroll-cue {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding-top: 40px;
+  }
+  .scroll-cue::after {
+    content: "";
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(180deg, var(--ink), transparent);
+    animation: pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* ---------- Two-column editorial layout ---------- */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .split .media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--soft);
+  }
+  .split .media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .split .media .caption {
+    position: absolute;
+    left: 16px; bottom: 16px;
+    color: white;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 13px;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+  }
+  .split.reverse .media { order: 2; }
+  .split.reverse .text { order: 1; }
+
+  /* ---------- Full-bleed image section ---------- */
+  .bleed {
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    overflow: hidden;
+  }
+  .bleed .bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .bleed .bg::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+  }
+  .bleed .wrap {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 200px 0 100px;
+    text-align: center;
+    max-width: 920px;
+  }
+  .bleed h2.display { color: white; }
+  .bleed .lede { color: rgba(255,255,255,0.85); margin-left: auto; margin-right: auto; }
+  .bleed .chapter-label { color: rgba(255,255,255,0.7); }
+  .bleed .chapter-label .num { color: rgba(255,255,255,0.95); }
+  .bleed .discover { color: white; border-color: rgba(255,255,255,0.7); }
+  .bleed .discover:hover { color: white; border-color: white; }
+
+  /* ---------- Pull quote ---------- */
+  .quote-section {
+    background: var(--soft);
+    padding: 160px 40px;
+    text-align: center;
+  }
+  .quote-section blockquote {
+    margin: 0 auto;
+    max-width: 880px;
+    font-family: var(--body);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.4;
+    color: var(--ink);
+    quotes: "\201C" "\201D";
+  }
+  .quote-section blockquote::before {
+    content: open-quote;
+    font-size: 1.4em;
+    line-height: 0;
+    color: var(--accent);
+    margin-right: 4px;
+  }
+  .quote-section blockquote::after { content: close-quote; color: var(--accent); }
+  .quote-section cite {
+    display: block;
+    margin-top: 36px;
+    font-style: normal;
+    font-family: var(--body);
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .quote-section cite strong { color: var(--ink); font-weight: 500; margin-right: 12px; }
+
+  /* ---------- Stats strip ---------- */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 60px 0 0;
+    border-top: 1px solid rgba(255,255,255,0.3);
+  }
+  .stats .stat {
+    padding: 36px 24px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.3);
+  }
+  .stats .stat:last-child { border-right: none; }
+  .stats .stat .num {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1;
+    margin-bottom: 12px;
+    color: white;
+  }
+  .stats .stat .lbl {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ---------- Pricing ---------- */
+  .pricing {
+    margin: 40px 0 30px;
+    border-top: 1px solid var(--hairline);
+  }
+  .pricing .row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: baseline;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .pricing .row .name {
+    font-family: var(--display);
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .pricing .row .name small {
+    display: block;
+    font-family: var(--body);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .pricing .row .price {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: right;
+  }
+  .pricing .row .mo {
+    font-size: 13px;
+    color: var(--muted);
+    text-align: right;
+  }
+  .pricing-foot {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+    max-width: 720px;
+  }
+
+  /* ---------- Final CTA ---------- */
+  .final {
+    background: var(--ink);
+    color: white;
+    text-align: center;
+    padding: 160px 40px;
+  }
+  .final .chapter-label { color: rgba(255,255,255,0.6); }
+  .final h2.display { color: white; margin-bottom: 24px; }
+  .final p { color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto 60px; }
+  .final .ctas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 520px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .final .ctas a {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 4px;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    transition: padding-left 0.3s, color 0.3s;
+  }
+  .final .ctas a:hover { padding-left: 16px; color: var(--accent); }
+  .final .ctas a .arrow { font-family: var(--display); font-style: italic; font-size: 20px; letter-spacing: 0; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 60px 40px 40px;
+    text-align: center;
+    background: var(--paper);
+    border-top: 1px solid var(--hairline);
+  }
+  footer .lks a {
+    margin: 0 14px;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  footer .lks a:hover { color: var(--ink); }
+  footer .copy {
+    margin-top: 20px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---------- In-page form lightbox (Business Plan Builder) ---------- */
+  .form-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 250;
+    background: rgba(0, 0, 0, 0.78);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .form-lightbox.open { display: flex; }
+  .form-lightbox .frame-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 980px;
+    height: calc(100vh - 80px);
+    max-height: 900px;
+    background: #fff;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .form-lightbox iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  .form-lightbox .form-close {
+    position: absolute;
+    top: -56px;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+    z-index: 2;
+  }
+  .form-lightbox .form-close:hover { background: rgba(255, 255, 255, 0.25); }
+
+  /* ---------- In-page video lightbox ---------- */
+  .video-trigger { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .video-trigger:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .video-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+  .video-lightbox.open { display: flex; }
+  .video-lightbox .frame-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6);
+  }
+  .video-lightbox iframe { width: 100%; height: 100%; border: 0; }
+  .video-lightbox .video-close {
+    position: absolute;
+    top: -56px;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+  }
+  .video-lightbox .video-close:hover { background: rgba(255, 255, 255, 0.25); }
+
+  /* ---------- Persistent tour-exit close button ---------- */
+  .tour-close {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 100;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.78);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 1;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+    transition: transform .18s ease, background .18s ease;
+  }
+  .tour-close::before {
+    content: "\00D7";
+    display: block;
+    margin-top: -3px;
+  }
+  .tour-close:hover {
+    background: #000;
+    color: #fff;
+    transform: scale(1.08);
+  }
+  .tour-close:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Scroll-reveal animations ---------- */
+  section .chapter-label,
+  section h1.display,
+  section h2.display,
+  section .lede,
+  section p.body,
+  section ul.body,
+  section blockquote,
+  section cite,
+  section .stats,
+  section .pricing,
+  section .pricing-foot,
+  section .media,
+  section .scroll-cue,
+  section .ctas,
+  section .discover {
+    opacity: 0;
+    transform: translateY(48px);
+    transition:
+      opacity 1.2s cubic-bezier(.2, .85, .25, 1),
+      transform 1.2s cubic-bezier(.2, .85, .25, 1);
+    will-change: opacity, transform;
+  }
+  section.in-view .chapter-label,
+  section.in-view h1.display,
+  section.in-view h2.display,
+  section.in-view .lede,
+  section.in-view p.body,
+  section.in-view ul.body,
+  section.in-view blockquote,
+  section.in-view cite,
+  section.in-view .stats,
+  section.in-view .pricing,
+  section.in-view .pricing-foot,
+  section.in-view .media,
+  section.in-view .scroll-cue,
+  section.in-view .ctas,
+  section.in-view .discover {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Stagger inside each section */
+  section.in-view .chapter-label  { transition-delay: 0.05s; }
+  section.in-view h1.display,
+  section.in-view h2.display      { transition-delay: 0.18s; }
+  section.in-view .lede           { transition-delay: 0.32s; }
+  section.in-view .media          { transition-delay: 0.20s; }
+  section.in-view p.body          { transition-delay: 0.42s; }
+  section.in-view ul.body         { transition-delay: 0.48s; }
+  section.in-view .stats          { transition-delay: 0.52s; }
+  section.in-view .pricing        { transition-delay: 0.42s; }
+  section.in-view .pricing-foot   { transition-delay: 0.52s; }
+  section.in-view blockquote      { transition-delay: 0.10s; }
+  section.in-view cite            { transition-delay: 0.32s; }
+  section.in-view .scroll-cue     { transition-delay: 0.55s; }
+  section.in-view .ctas           { transition-delay: 0.40s; }
+  section.in-view .discover       { transition-delay: 0.50s; }
+
+  /* Bleed-section background gentle ken-burns when in view */
+  .bleed .bg {
+    transform: scale(1.08);
+    transition: transform 14s ease-out;
+  }
+  .bleed.in-view .bg {
+    transform: scale(1);
+  }
+
+  /* Respect reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    section *,
+    .bleed .bg {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 880px) {
+    .top-bar { padding: 16px 20px; }
+    .top-bar nav a { display: none; }
+    .top-bar nav a:last-child { display: inline; margin-left: 0; }
+    .rail { display: none; }
+    section { padding: 100px 24px 60px; }
+    .split { grid-template-columns: 1fr; gap: 40px; }
+    .split.reverse .media { order: 0; }
+    .split.reverse .text { order: 1; }
+    .hero { padding-top: 140px; }
+    .quote-section { padding: 100px 24px; }
+    .final { padding: 100px 24px; }
+    .pricing .row { grid-template-columns: 2fr 1fr; }
+    .pricing .row .mo { grid-column: 2; text-align: right; }
+    .stats { grid-template-columns: 1fr; }
+    .stats .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.3); }
+    .stats .stat:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<a href="https://gammill.com" class="tour-close" aria-label="Exit tour" title="Exit tour"></a>
+
+<!-- ============ FIXED HEADER ============ -->
+<header class="top-bar">
+  <a href="#top" class="brand">Gammill <em>Why Quilters Choose</em></a>
+  <nav>
+    <a href="https://gammill.com/owners/">Owners</a>
+    <a href="https://gammill.com">Shop</a>
+  </nav>
+</header>
+
+<!-- ============ SIDE RAIL (chapter dots) ============ -->
+<aside class="rail" aria-label="Chapters">
+  <a href="#top" class="active" title="Welcome"></a>
+  <a href="#ch1" title="The Promise"></a>
+  <a href="#ch2" title="Built Different"></a>
+  <a href="#ch3" title="The Table"></a>
+  <a href="#ch4" title="Stitch Quality"></a>
+  <a href="#ch5" title="Software"></a>
+  <a href="#ch6" title="Training"></a>
+  <a href="#ch7" title="Service"></a>
+  <a href="#ch8" title="Community"></a>
+  <a href="#ch9" title="Long-Term Value"></a>
+  <a href="#cta" title="Next Step"></a>
+</aside>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="hero">
+  <div class="wrap">
+    <div class="chapter-label">A machine tour</div>
+    <h1 class="display">Why Serious Quilters<br>Choose Gammill</h1>
+    <p class="lede">Learn what makes the Gammill totally unique.</p>
+    <a href="#ch1" class="scroll-cue">Scroll</a>
+  </div>
+</section>
+
+<!-- ============ CH 1 — THE PROMISE ============ -->
+<section id="ch1">
+  <div class="wrap">
+    <div class="split">
+      <div class="text">
+        <div class="chapter-label"><span class="num">01</span>The Promise</div>
+        <h2 class="display">Built to serve <em>generations of Quilters.</em></h2>
+        <p class="lede">A Gammill is designed for a shockingly long life. <strong>The Gammill machine you order today will outlast all 8 billion humans on earth.</strong> It will bring joy to many generations of Quilters.</p>
+        <p class="body" style="font-size:13px; color:#888; margin-top:-14px;">All Gammill machines since 1997 are functioning today unless they were lost to fire, flood, or other external disaster, or unless one is waiting to be retrofitted.</p>
+        <p class="body">At the center of every Gammill machine is a set of hydrodynamically lubricated journal bearings, with clear, non-staining oil delivered by a network of little hoses. Industrial equipment since the 1880s has relied on this type of bearing because of its durability, and this is an important part of why Gammill machines are widely hailed as "workhorse" machines.</p>
+        <p class="body">What <em>does</em> wear out over decades is everything electrical. Electrical includes motors, electronics, controls, and wiring. So what should your grandchildren do, when the machine they inherited has crusty old wires? Only Gammill machines have Retrofits available. A retrofit takes a Gammill <em>of any era</em> and installs a new electrical system to bring that older machine current: we reuse the machine and table (because they are essentially eternal), and replace the rest with the complete electrical and electronic system of any current model.</p>
+        <p class="body"><strong>Every Gammill built since 1997 is still in service today.</strong> This is possible because of retrofitting. No other longarm manufacturer offers retrofitting. When other brands of longarm machines get old, they get thrown away — but not Gammill.</p>
+      </div>
+      <div class="media">
+        <img src="assets/web/step3-c.jpg" alt="A Gammill machine still in service after decades">
+        <div class="caption">Three generations · Iowa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CH 2 — BUILT DIFFERENT ============ -->
+<section id="ch2" class="bleed">
+  <div class="bg" style="background-image:url('assets/web/step2-a.jpg')"></div>
+  <div class="wrap">
+    <div class="chapter-label"><span class="num">02</span>Built Different</div>
+    <h2 class="display">Built like the <em>industrial machine</em> it is.</h2>
+    <p class="lede">Investment-cast aluminum chassis. Steel shafts. Hardened steel gears. Curved throat profile that keeps full quilting space as the quilt rolls up. No timing belt to stretch, slip, or leave you waiting on repairs. Components built for commercial, not occasional, use.</p>
+  </div>
+</section>
+
+<!-- ============ PULL QUOTE — DIANE RASMUSSEN ============ -->
+<section class="quote-section">
+  <blockquote>
+    I immediately fell in love with the Vision machine. My husband loved the Gammill frame. We both loved the solid workmanship.
+  </blockquote>
+  <cite><strong>Judy Abeel</strong> Vision owner since 2010 · retrofitted to Statler in 2019 · Michigan</cite>
+</section>
+
+<!-- ============ CH 3 — THE TABLE ============ -->
+<section id="ch3">
+  <div class="wrap">
+    <div class="split reverse">
+      <div class="text">
+        <div class="chapter-label"><span class="num">03</span>The Table</div>
+        <h2 class="display">The table is <em>half</em> the machine.</h2>
+        <p class="lede">A great camera in shaky hands isn't going to capture a crisp photo. A great machine on a flexing or shaking table isn't going to stitch accurately either. Every Gammill machine comes on a foundation built for commercial use — welded tube steel, four points of contact, truly level.</p>
+        <p class="body">Most longarm tables are flat steel, shipped sectional and bolted together at the buyer's house. They cost less to build and ship easier — but they also flex, and make accurate quilting difficult or impossible. A Gammill table is welded from tube steel, one piece, the full length of the table.</p>
+        <p class="body">When a longarm table flexes, the bars holding the quilt bow in the center. The quilt ends up tight on the edges and unacceptably loose in the middle — uneven tension, the kind of work a show judge or a paying customer notices first.</p>
+        <p class="body">Even a perfectly built table can be undone by an uneven floor. Most longarm tables sag in the middle, so extra legs and feet are added for support — but with six or more leveling feet it can be extremely difficult to get the machine to glide nicely. A Gammill frame, even at the maximum length of 14 feet, uses just <strong>four</strong> feet (or casters) to level.</p>
+        <ul class="body">
+          <li>Welded <strong>tube steel</strong> — one solid piece, not separate sections</li>
+          <li>Just <strong>four leveling feet</strong>, even on the 14' table</li>
+          <li><strong>Breeze Track</strong> with self-adjusting wheels — a silky-smooth glide</li>
+          <li>12' table is standard — custom lengths such as 10' or 14' available</li>
+        </ul>
+      </div>
+      <div class="media video-trigger" data-video="bs0XZV5U_D4" role="button" tabindex="0" aria-label="Play table & stand owner testimonials">
+        <img src="assets/web/step3-a.jpg" alt="The Pivotal Access Table">
+        <div class="caption">▶ &ldquo;Gammill bars don't bend and sag.&rdquo; — owner testimonials</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CH 4 — STITCH QUALITY ============ -->
+<section id="ch4">
+  <div class="wrap">
+    <div class="split">
+      <div class="text">
+        <div class="chapter-label"><span class="num">04</span>Stitch Quality</div>
+        <h2 class="display">The <em>least-fussy</em> longarm you can buy.</h2>
+        <p class="lede">Stitch quality isn't defined by stitch regulation or motor horsepower. It's about <strong>tension that stays put</strong> and a machine that moves <strong>effortlessly</strong>, as if it was reading your mind. Who wants to be ripping out stitching and inventing expletives?</p>
+        <p class="body">Every modern longarm has stitch regulation and several different stitching modes. Of course the Gammill has the most functional and useful design — but let's not miss the forest for the trees. The two things that actually determine whether your stitching is satisfactory are <strong>tension stability</strong> and <strong>smooth movement.</strong></p>
+        <p class="body">Tension stability has always been difficult for longarm quilters. Most longarms use the same basic tension design as a domestic sewing machine — but longarm quilting is more demanding, and "okay" tension isn't going to satisfy you. In the earliest days of longarming, quilters noticed loops appearing on the back of the quilt after long days, especially on hot afternoons. Ken Gammill set his inventive mind to the problem and figured out (and patented) two exclusive mechanisms. Thirty years later, <strong>Intermittent Tension</strong> and <strong>Automatic Thread Escapement</strong> have come to define perfect stitching in the longarm world. Those dreaded afternoon loops? Unknown to Gammill owners.</p>
+        <p class="body">Smooth movement is the downstream effect of everything you've already read — the investment-cast aluminum chassis, the welded tube-steel table, the Breeze Track system. The machine goes effortlessly where you want it to.</p>
+        <ul class="body">
+          <li><strong>Intermittent Tension</strong> separates tension from the checkspring and clamps the top thread at key moments to prevent loops, eyelashes, and railroad tracks</li>
+          <li><strong>Automatic Thread Escapement</strong> keeps tension steady through temperature &amp; humidity changes by opening a small "door" for the thread to slip through</li>
+          <li><strong>M-class large-capacity bobbin</strong> — about 2× standard capacity, fewer thread changes, with no stitch-quality penalty thanks to the patents above</li>
+          <li>The least-fussy tension in the industry — no accursed loops on the back</li>
+          <li>Smooth movement — downstream effect of the build quality of the machine chassis, table, and Breeze Track</li>
+        </ul>
+        <p class="body" style="font-size:13px; color:#888;">*Intermittent Tension, Automatic Thread Escapement, no timing belts, and the professional table are not available on 18-inch machines. 18" machines include a Home Pro Table.</p>
+      </div>
+      <div class="media">
+        <img src="assets/web/step4-a.jpg" alt="Close-up of stitch quality">
+        <div class="caption">Photo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CH 5 — SOFTWARE ============ -->
+<section id="ch5" class="bleed">
+  <div class="bg" style="background-image:url('assets/web/step5-a.jpg')"></div>
+  <div class="wrap">
+    <div class="chapter-label"><span class="num">05</span>Software</div>
+    <h2 class="display">We invented Computerized Quilting.<br><em>For 25 years</em> we've been making it better.</h2>
+    <p class="lede">CreativeStudio has the only integrated pattern-management system in the longarm world — and PatternCloud puts an inexhaustible pattern library at your fingertips.</p>
+  </div>
+</section>
+
+<!-- ============ PULL QUOTE — LINDA V TAYLOR ============ -->
+<section id="quote-linda" class="quote-section">
+  <blockquote>
+    I know hands-down, CreativeStudio 7 is the best. The function and control over the quilting I provide for my clients is top notch — it sometimes still causes me to think, "dang, I surprised even myself with how good that quilting looks."
+  </blockquote>
+  <cite><strong>Shelly Moore</strong> Quilt Stitching by Shelly · Statler owner since 2017</cite>
+</section>
+
+<!-- ============ CH 6 — TRAINING ============ -->
+<section id="ch6">
+  <div class="wrap">
+    <div class="split reverse">
+      <div class="text">
+        <div class="chapter-label"><span class="num">06</span>Training</div>
+        <h2 class="display">You're <em>never alone.</em></h2>
+        <p class="lede">Picture this: a longarm machine shows up at your house in a dozen boxes. The unboxing isn't the hard part, and even assembly isn't the worst — ruining quilts is what's hard. So Gammill is with you every step of the way.</p>
+        <p class="body">Every new Gammill comes with delivery, installation, and New Owner Training included in the price. A trained Gammill technician sets up the machine in your space, levels the table, calibrates the system, walks you through the first stitches, and reviews basic machine operation with you, hands-on. You'll be quilting actual quilts — for yourself or for customers — from Day 1.</p>
+        <ul class="body">
+          <li>In-home delivery and setup (extra charge outside Continental US)</li>
+          <li>Comprehensive <strong>New Owner Training</strong> included</li>
+          <li><strong>Gammill Video Series</strong> — owners' on-demand library</li>
+        </ul>
+      </div>
+      <div class="media">
+        <img src="assets/web/candidate-2.jpg" alt="New owner training in progress">
+        <div class="caption">Quilt Loading · Professional Frame</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CH 7 — SERVICE & WARRANTY (full bleed + stats) ============ -->
+<section id="ch7" class="bleed">
+  <div class="bg" style="background-image:url('assets/web/step7-a.jpg')"></div>
+  <div class="wrap">
+    <div class="chapter-label"><span class="num">07</span>Service &amp; Warranty</div>
+    <h2 class="display">The only longarm company where field service techs <em>work for the factory.</em></h2>
+    <p class="lede">Most other longarm manufacturers deflect service to independent dealers — small businesses that often have trouble hiring and retaining top-quality technicians. Gammill is different.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">100%</div><div class="lbl">Factory trained &amp; supervised</div></div>
+      <div class="stat"><div class="num">0</div><div class="lbl">Independent dealers</div></div>
+      <div class="stat"><div class="num">∞</div><div class="lbl">Lifetime warranty</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PULL QUOTE — PAULA GENTRY ============ -->
+<section id="quote-paula" class="quote-section">
+  <blockquote>
+    Customer service helped me diagnose problems.
+  </blockquote>
+  <cite><strong>MeLisa Peyton</strong> Gammill owner · Arizona</cite>
+</section>
+
+<!-- ============ CH 8 — COMMUNITY ============ -->
+<section id="ch8">
+  <div class="wrap">
+    <div class="split">
+      <div class="text">
+        <div class="chapter-label"><span class="num">08</span>The Community</div>
+        <h2 class="display">You're not just buying a machine. <em>You're joining a family.</em></h2>
+        <p class="lede">A longarm sits in a quilter's home for decades. The network of people who own one keeps showing up for each other — at Quilting with Confidence events, and in the personal homes where the next Gammill owner gets her first look at a Gammill.</p>
+        <p class="body">We don't sell through dealers anymore. There was no way to control fraudulent and illegal activity because they were independent. All machine orders are now handled through the home office, delivered, serviced, and trained by Gammill factory staff. But the people who show off Gammill machines in their own studios and living rooms — we call them <strong>Super Fans</strong> — are Gammill owners themselves. At some point in the past they had a friend introduce them to the Gammill machine that changed their world, and now they've decided to <strong>pay it forward</strong>, the same way somebody once did for them.</p>
+      </div>
+      <div class="media">
+        <img src="assets/web/step8-a.jpg" alt="Gammill owners at Quilting with Confidence">
+        <div class="caption">Quilting with Confidence · training</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CH 9 — LONG-TERM VALUE ============ -->
+<section id="ch9">
+  <div class="wrap" style="max-width: 980px">
+    <div class="chapter-label"><span class="num">09</span>Long-Term Value</div>
+    <h2 class="display">What it costs — and <em>what it can earn back.</em></h2>
+    <p class="lede">All-inclusive pricing, financing to help you get started, and for most owners — a machine that pays for itself.</p>
+    <p class="body">No hidden but forced "options." No "starting at" footnotes that disappear by the time you sign. The price below includes the machine, the table, delivery to your door in the lower 48, professional setup, and lifetime access to Gammill New Owner Training.</p>
+
+    <div class="pricing">
+      <div class="row"><div class="name">Vision 2.0<small>Hand-guided</small></div><div class="price">$16,499</div><div class="mo">$282 / mo</div></div>
+      <div class="row"><div class="name">Statler<small>Advanced computerized</small></div><div class="price">$42,999</div><div class="mo">$736 / mo</div></div>
+      <div class="row"><div class="name">Statler Ascend<small>Advanced+ extra speed &amp; accuracy</small></div><div class="price">$48,999</div><div class="mo">$839 / mo</div></div>
+    </div>
+    <p class="pricing-foot">Sample monthly payments based on an 84-month term for well-qualified borrowers. Several financing partners available. Subject to credit approval.</p>
+
+    <div style="margin-top:60px">
+      <h3 style="font-family:var(--display); font-size:32px; font-weight:700; margin:0 0 16px;">Will it pay for itself?</h3>
+      <p class="body">Many Gammill owners run a home-based quilting business — and many of them pay the machine off in just a year or two.</p>
+      <p class="body">Our <strong>Business Plan Builder</strong> is a short questionnaire that delivers an 8-to-12 page custom business plan to your inbox in 30 minutes — tailored to your region and your interests.</p>
+      <a href="https://gammill.com/owners/education/sample-business-plan/" data-form="https://gammill.com/owners/education/sample-business-plan/" class="cta-amber" role="button" tabindex="0">Start your business plan<span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL QUOTE — JANET MAHONEY ============ -->
+<section class="quote-section">
+  <blockquote>
+    Bought my Gammill Classic Plus in 2011. Started quilting for others to pay for it. Had it paid for in two years. It is still going strong.
+  </blockquote>
+  <cite><strong>Pamela Burch</strong> Classic Plus owner since 2011 · Washington</cite>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="cta" class="final">
+  <div class="wrap">
+    <div class="chapter-label">The Next Step</div>
+    <h2 class="display">Ready when you are.</h2>
+    <p>You've finished the tour. Now what?</p>
+    <div class="ctas">
+      <a href="https://gammill.com/find-a-gammill/">See a Gammill in person <span class="arrow">→</span></a>
+      <a href="https://gammill.com/build-and-price/">Build &amp; Price your Gammill <span class="arrow">→</span></a>
+      <a href="https://gammill.com/owners/education/sample-business-plan/" data-form="https://gammill.com/owners/education/sample-business-plan/">Get your custom business plan <span class="arrow">→</span></a>
+      <a href="https://gammill.com/contact/">Talk to an advisor <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEO LIGHTBOX ============ -->
+<div class="video-lightbox" role="dialog" aria-modal="true" aria-label="Video">
+  <div class="frame-wrap">
+    <button class="video-close" aria-label="Close video">×</button>
+    <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- ============ FORM LIGHTBOX (Business Plan Builder) ============ -->
+<div class="form-lightbox" role="dialog" aria-modal="true" aria-label="Business Plan Builder">
+  <div class="frame-wrap">
+    <button class="form-close" aria-label="Close form">×</button>
+    <iframe title="Business Plan Builder" loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="lks">
+    <a href="https://gammill.com">gammill.com</a>
+    <a href="https://gammill.com/machines/buyers-guide-2/pricing/">Pricing</a>
+    <a href="https://gammill.com/machines/buyers-guide-2/financing/">Financing</a>
+    <a href="https://gammill.com/machines/buyers-guide-2/compare-machines/">Compare</a>
+  </div>
+  <div class="copy">© 2026 Gammill, Inc. · Built in West Plains, Missouri</div>
+</footer>
+
+<script>
+  // Side-rail active dot follows scroll
+  (function () {
+    const rail = document.querySelectorAll('.rail a');
+    const targets = Array.from(rail).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    function update() {
+      const y = window.scrollY + window.innerHeight * 0.4;
+      let activeIdx = 0;
+      targets.forEach((t, i) => { if (t && t.offsetTop <= y) activeIdx = i; });
+      rail.forEach((a, i) => a.classList.toggle('active', i === activeIdx));
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+
+  // In-page form lightbox (Business Plan Builder)
+  (function () {
+    const lb = document.querySelector('.form-lightbox');
+    if (!lb) return;
+    const frame = lb.querySelector('iframe');
+    const closeBtn = lb.querySelector('.form-close');
+
+    function open(url) {
+      frame.src = url;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      frame.src = '';
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('[data-form]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        open(el.dataset.form);
+      });
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          open(el.dataset.form);
+        }
+      });
+    });
+    closeBtn.addEventListener('click', close);
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.classList.contains('open')) close();
+    });
+  })();
+
+  // In-page video lightbox
+  (function () {
+    const lb = document.querySelector('.video-lightbox');
+    if (!lb) return;
+    const frame = lb.querySelector('iframe');
+    const closeBtn = lb.querySelector('.video-close');
+
+    function open(id) {
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      frame.src = '';
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('[data-video]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        open(el.dataset.video);
+      });
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          open(el.dataset.video);
+        }
+      });
+    });
+    closeBtn.addEventListener('click', close);
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.classList.contains('open')) close();
+    });
+  })();
+
+  // Scroll-reveal: fade-up + ken-burns as each section enters the viewport
+  (function () {
+    const sections = document.querySelectorAll('section');
+    if (!('IntersectionObserver' in window)) {
+      sections.forEach(s => s.classList.add('in-view'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+    sections.forEach(s => io.observe(s));
+    // Hero is on screen at load — reveal immediately
+    requestAnimationFrame(() => {
+      const hero = document.getElementById('top');
+      if (hero) hero.classList.add('in-view');
+    });
+  })();
+</script>
+
+<script src="editor.js" defer></script>
+
+</body>
+</html>
