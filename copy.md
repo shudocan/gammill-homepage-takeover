@@ -233,7 +233,7 @@ BODY · PARAGRAPH 2  [[s01.body.p2]]
 What **does** wear out over decades is everything electrical. Electrical includes motors, electronics, controls, and wiring. So what should your grandchildren do, when the machine they inherited has crusty old wires? **Only Gammill machines have Retrofits available.** A retrofit takes a Gammill *of any era* and installs a new electrical system to bring that older machine current: we reuse the machine and table (because they are essentially eternal), and replace the rest with the complete electrical and electronic system of any current model.
 
 BODY · PARAGRAPH 3  [[s01.body.p3]]
-**Every Gammill built since 1997 is still in service today.** This is possible because of retrofitting. No other longarm manufacturer offers retrofitting. When other brands of longarm machines get old, they get thrown away — but not Gammill.
+**Every Gammill built since 1997 is still in service today.** This is possible because of retrofitting. No other longarm manufacturer offers retrofitting. When other brands of longarm machines get old, they get thrown away — but not Gammill. It's also why pre-owned Gammills hold the highest resale value in the longarm industry.
 
 STAT 1 · NUMBER  [[s01.stat.1.num]]
 1997
@@ -499,7 +499,7 @@ BULLETS  [[s05.body.bullets]]
 - **Pattern preview** — see exactly where stitches will land before the first stitch (great for getting customer approval before you commit)
 - **Resilient workflow** — auto-restart at exact pattern position after a thread break or bobbin change; auto-calculate rows, repeats, and pattern fit from a single measurement
 - Stand-Alone CreativeStudio works with any model — even Vision 2.0 and preloved Elevates
-- 25+ years of refinement; no annual rewrites
+- 25+ years of refinement, no annual rewrites — every owner from newbie to 20-year veteran runs the same software, which is what lets the community actually help each other
 
 PULL QUOTE · BODY  [[s05.quote.body]]
 I know hands-down, CreativeStudio 7 is the best. The function and control over the quilting I provide for my clients is top notch — it sometimes still causes me to think, "dang, I surprised even myself with how good that quilting looks."
@@ -595,7 +595,7 @@ HEADLINE  [[s07.h1]]
 The only longarm company where field service techs work for the factory.
 
 LEDE  [[s07.lede]]
-Most other longarm manufacturers deflect service to independent dealers — small businesses that often have trouble hiring and retaining top-quality technicians. Gammill is different.
+Most other longarm manufacturers deflect service to independent dealers — small businesses that often have trouble hiring and retaining top-quality technicians. Gammill is different. Between machines that don't break and a service team that doesn't make you wait, owners describe their downtime as virtually zero.
 
 BODY KICKER  [[s07.body.kicker]]
 The Gammill service network
@@ -674,7 +674,7 @@ HEADLINE  [[s08.h1]]
 You're not just buying a machine. You're joining a family.
 
 LEDE  [[s08.lede]]
-A longarm sits in a quilter's home for decades. The network of people who own one keeps showing up for each other — at Quilting with Confidence events, and in the personal homes where the next Gammill owner gets her first look at a Gammill.
+A longarm sits in a quilter's home for decades. The network of people who own one keeps showing up for each other — at Quilting with Confidence events, and in the personal homes where the next Gammill owner gets her first look at a Gammill. **No other longarm brand has anything close to this community.**
 
 BODY KICKER  [[s08.body.kicker]]
 Owner to owner. By design.
@@ -772,6 +772,18 @@ Bought my Gammill Classic Plus in 2011. Started quilting for others to pay for i
 
 PULL QUOTE · CITE  [[s09.quote.cite]]
 **Pamela Burch** · Classic Plus owner since 2011 · Washington
+
+MISSION CLOSER · LABEL 1  [[s09.mission.label]]
+Our mission
+
+MISSION CLOSER · STATEMENT 1  [[s09.mission.statement]]
+To empower quilters to share love, comfort, and beauty — by offering the highest quality products and services.
+
+VISION CLOSER · LABEL 2  [[s09.vision.label]]
+Our vision
+
+VISION CLOSER · STATEMENT 2  [[s09.vision.statement]]
+A world where longarm quilters have the equipment, resources, and support they need to quilt confidently.
 
 FINAL-CTA · HEADLINE  [[s09.cta.h3]]
 Ready to take the next step?
