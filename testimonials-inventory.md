@@ -227,6 +227,15 @@ Plus from Tab C (social-media-only owners, no full long-form): Lorna Kelly, Russ
 
 ---
 
+## Additional testimonials surfaced from SALES master deck (2026-05-09)
+
+These are not in the spreadsheet but appear in the SALES master deck (Drive `1MXXYUb2YVA3kSDTvw7QwjQ8PlhDSoYb1stEu72xqMkc`). Likely already permission-cleared since they're in an active sales presentation, but verify before public use.
+
+- **Cindy S** (Statler, since 2017) — *"The Gammill Statler Stitcher has been a workhorse since buying it in 2017. It has always stitched well and only minimal service needed in 6.5 years. Today the Gammill team came to give the machine a tune-up (recommended every 5 years) and smoothed out some minor things... Thank you for a very expert service call! See you again in five years!"* — **Ch 7 (Service & Warranty)** — supports the 5-year tune-up cadence claim
+- **Marylin Angeloff** (new Vision 22") — *"Had a wonderful experience today on the installation of my new 22-inch Gammill Vision Machine. Nathan arrived at the stated time and stayed 7-8 hours taking out my old machine and installing the new one. He went over everything with me. He was amazingly patient and kind. I have NEVER had anyone spend so much time answering questions and showing me how things worked!"* — **Ch 7 / new Delivery chapter** — names the same Nathan that Marla McDermitt mentioned (consistency / brand-voice point)
+- **Robin D.** (Statler) — *"I finally landed on Statler, and I'm so glad I did. Not only does it do more than any other system on the market, I was able to learn the software while waiting for my machine to be delivered. In fact, eight days after it was installed, I finished my first custom quilt, a show quilt that won second place."* — **new Training chapter** — concrete proof of fast onramp ("eight days... won second place")
+- **Mary** (older Optimum Plus, sloped basement floor) — *"The technician serviced my Gammill Optimum Plus today and it was great!! He replaced the screen that went out and I got a new belt, new o-rings, restocked my spare parts. To top it off he leveled my machine in my basement with a sloped floor! My frame is now square instead of slightly askew. Don was early (a good thing!), thorough and friendly. My best experience with Gammill yet."* — **Ch 3 (Table) or Ch 7 (Service)** — names a real Gammill tech (Don) and validates the "real-house floors" framing in Ch 3
+
 ## Things to do next
 
 1. **Track down Linda V Taylor's actual quote** — she's a real Gammill educator but isn't in this sheet. If she's not load-bearing for Ch 5, swap to **Shelly Moore** (already strong, already in this list).

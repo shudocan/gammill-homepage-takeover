@@ -595,7 +595,7 @@ HEADLINE  [[s07.h1]]
 The only longarm company where field service techs work for the factory.
 
 LEDE  [[s07.lede]]
-Most other longarm manufacturers deflect service to independent dealers — small businesses that often have trouble hiring and retaining top-quality technicians. Gammill is different. Between machines that don't break and a service team that doesn't make you wait, owners describe their downtime as virtually zero.
+Most other longarm manufacturers deflect service to independent dealers — small businesses that often have trouble hiring and retaining top-quality technicians. Gammill is different. Between machines that don't break and a service team that doesn't make you wait — and a recommended professional tune-up just every five years — owners describe their downtime as virtually zero.
 
 BODY KICKER  [[s07.body.kicker]]
 The Gammill service network
