@@ -360,16 +360,16 @@ BODY · OPENING PARAGRAPH (drop-cap on first letter)  [[s03.body.p1]]
 Most longarm tables are built from flat steel and shipped sectional — bolted together at the buyer's house so they fit in a UPS-friendly box. Sections cost less to build and they ship easier. But they also flex, and make accurate quilting difficult or impossible. A Gammill table is welded from tube steel, one piece, the full length of the table. Tube steel is dramatically stiffer than flat steel. Welded is dramatically stiffer than bolted. The result behaves like a single rigid object.
 
 BODY · PARAGRAPH 2  [[s03.body.p2]]
-Why this matters: when a longarm table flexes, the bars holding the quilt bow in the center. The quilt ends up tight on the edges and unacceptably loose in the middle. That looseness is the visible signature of a flexing table — uneven tension, the kind of work a show judge or a paying customer notices first.
+Why this matters: when a longarm table flexes, the bars holding the quilt bow in the center. The quilt ends up tight on the edges and unacceptably loose in the middle. That looseness is the visible signature of a flexing table — uneven tension, the kind of flaws a show judge or a paying customer notices first.
 
 BODY · PARAGRAPH 3  [[s03.body.p3]]
-Even a perfectly built table can be undone by an uneven floor. Most longarm tables sag in the middle, so extra legs and feet are added for support — but with six or more leveling feet it can be extremely difficult to get the machine to glide nicely. A Gammill frame, even at the maximum length of 14 feet, uses just **four** feet (or casters) to level. And Breeze Track, included on every Gammill, self-adjusts as the head moves, so the glide stays silky from one end of the table to the other.
+Even a well-built table can be difficult to quilt on if it's not leveled. No ordinary floor is level enough for a longarm machine, so leveling feet are included. Most other longarm tables sag in the middle, so extra legs and feet are added for support — but with six or more leveling feet it can be extremely difficult to get the machine to glide nicely. A Gammill frame, even at the maximum length of 14 feet, uses just **four** feet to level. And Breeze Track, included on every Gammill, self-adjusts as the head moves, so the glide stays silky from one end of the table to the other.
 
 BULLETS  [[s03.body.bullets]]
-- Welded tube steel — one solid piece, not separate sections
-- Just four leveling feet, even on the 14' table — true leveling, less drift
+- Welded tube steel table — one solid piece, not separate sections
+- Just four leveling feet, even on the 14' table — simple to level
 - Breeze Track with self-adjusting wheels — a silky-smooth glide
-- 12' table is standard — custom lengths such as 10' or 14' available · Home Pro Table option for 18-inch machines
+- **12' GS6 Professional table** standard for 22", 26", and 30" machines; custom 10' or 14' available. 18" machines come on a **10' or 12' Home Pro Table** (custom lengths available).
 
 TESTIMONIAL · NAME / TITLE LINE  [[s03.testimonial.name]]
 "Gammill bars don't bend and sag."
