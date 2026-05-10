@@ -1,4 +1,4 @@
-/* Why Gammill Tour — in-page Edit Mode
+/* Why Gammill Tour - in-page Edit Mode
  * Drop-in script. Adds a floating toolbar with Edit / Save / Copy Changes / Reset.
  * Persists per-page edits in localStorage so refreshes don't lose progress.
  * On Copy Changes: dumps a structured diff to clipboard for handoff.
@@ -220,7 +220,7 @@
         autoSaved: true,
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-      // Quiet visual: brief "Saved ✓" then return to "Editing — N regions"
+      // Quiet visual: brief "Saved ✓" then return to "Editing - N regions"
       setStatus(`Auto-saved · ${changes.length} change${changes.length > 1 ? 's' : ''}`);
       toolbar.querySelector('.ed-copy').hidden = false;
       toolbar.querySelector('.ed-reset').hidden = false;
@@ -242,7 +242,7 @@
     });
     toolbar.querySelector('.ed-toggle').textContent = '👁️ View';
     toolbar.querySelector('.ed-save').hidden = false;
-    setStatus(`Editing — ${originals.size} regions. Auto-save on.`);
+    setStatus(`Editing - ${originals.size} regions. Auto-save on.`);
   }
 
   function exitEditMode() {
@@ -323,7 +323,7 @@
       return;
     }
 
-    let txt = `=== Why Gammill Tour — In-page Edits ===\n`;
+    let txt = `=== Why Gammill Tour - In-page Edits ===\n`;
     txt += `Page: ${data.page}\n`;
     txt += `Saved: ${data.timestamp}\n`;
     txt += `Changes: ${data.changes.length}\n\n`;

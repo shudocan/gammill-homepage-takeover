@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Open+Sans:wght@400;600;700&family=Raleway:wght@700;800;900&display=swap');
 
-/* Real Gammill brand palette — sourced from gammillpenn theme stylesheet */
+/* Real Gammill brand palette - sourced from gammillpenn theme stylesheet */
 :root {
   --black:        #000000;
   --charcoal:     #2d2d2d;
@@ -236,7 +236,7 @@ a:hover { color: var(--slate-dark); }
   max-width: 760px; margin-top: 14px;
 }
 
-/* Hero with photographic background — layered for ken-burns animation */
+/* Hero with photographic background - layered for ken-burns animation */
 .hero.with-image {
   background: var(--ink);
   border-bottom: 3px solid var(--amber);
@@ -567,7 +567,7 @@ a:hover { color: var(--slate-dark); }
   cursor: pointer;
   z-index: 2;
 }
-/* Invisible expanded hit area — catches "near misses" around the visible button */
+/* Invisible expanded hit area - catches "near misses" around the visible button */
 .landing-cta::before {
   content: '';
   position: absolute;
@@ -679,7 +679,7 @@ a:hover { color: var(--slate-dark); }
 
 /* ======================================================================
    EDITORIAL DESIGN SYSTEM
-   Heritage magazine aesthetic — Fraunces serif italic, chapter numerals,
+   Heritage magazine aesthetic - Fraunces serif italic, chapter numerals,
    drop caps, editorial pull quotes, rule-bordered stats, ken-burns,
    scroll-triggered reveals.
    ====================================================================== */
@@ -692,7 +692,7 @@ a:hover { color: var(--slate-dark); }
 }
 .serif-italic { font-style: italic; font-weight: 400; }
 
-/* Chapter kicker — replaces .eyebrow on heroes */
+/* Chapter kicker - replaces .eyebrow on heroes */
 .kicker-rule {
   display: inline-flex;
   align-items: center;
@@ -732,7 +732,7 @@ a:hover { color: var(--slate-dark); }
   color: rgba(255,255,255,0.92);
 }
 
-/* Massive chapter numeral — italic serif watermark (hidden per design) */
+/* Massive chapter numeral - italic serif watermark (hidden per design) */
 .numeral {
   display: none;
   position: absolute;
@@ -760,7 +760,7 @@ a:hover { color: var(--slate-dark); }
   }
 }
 
-/* SVG grain overlay — subtle film-grain atmosphere */
+/* SVG grain overlay - subtle film-grain atmosphere */
 .grain {
   position: absolute; inset: 0;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
@@ -770,7 +770,7 @@ a:hover { color: var(--slate-dark); }
   z-index: 2;
 }
 
-/* Drop cap — opening paragraph of a body section */
+/* Drop cap - opening paragraph of a body section */
 .opener { margin-bottom: 1.1em; }
 .opener .dropcap {
   font-family: 'Fraunces', Georgia, serif;
@@ -784,7 +784,7 @@ a:hover { color: var(--slate-dark); }
   padding-top: 0.08em;
 }
 
-/* Editorial stats strip — rule-bordered, large serif numerals */
+/* Editorial stats strip - rule-bordered, large serif numerals */
 .stats-editorial {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -823,7 +823,7 @@ a:hover { color: var(--slate-dark); }
   margin-top: 12px;
 }
 
-/* Editorial pull quote — rule-bordered, serif italic, hanging glyph */
+/* Editorial pull quote - rule-bordered, serif italic, hanging glyph */
 .pullquote-editorial {
   position: relative;
   padding: 48px 0 32px;
@@ -868,7 +868,7 @@ a:hover { color: var(--slate-dark); }
   font-weight: 800;
 }
 
-/* Asymmetric content grid — push beyond brochure proportions */
+/* Asymmetric content grid - push beyond brochure proportions */
 .content-grid { grid-template-columns: 1.35fr 1fr; gap: 64px; }
 .content-grid.reverse { grid-template-columns: 1fr 1.35fr; gap: 64px; }
 @media (max-width: 880px) {
@@ -877,7 +877,7 @@ a:hover { color: var(--slate-dark); }
   }
 }
 
-/* "Want to go deeper?" — refined editorial treatment */
+/* "Want to go deeper?" - refined editorial treatment */
 .deeper {
   border-left: 2px solid var(--amber);
   padding: 18px 22px;
@@ -947,11 +947,11 @@ a:hover { color: var(--slate-dark); }
   .numeral { opacity: 0.16 !important; }
 }
 
-/* Refined progress bar — slimmer, more editorial */
+/* Refined progress bar - slimmer, more editorial */
 .progress .inner { padding: 12px 24px; }
 .progress-bar .seg { height: 4px; }
 
-/* Refined nav-pill — quieter */
+/* Refined nav-pill - quieter */
 .nav-pill {
   font-family: 'Fraunces', Georgia, serif;
   font-style: italic;
@@ -972,14 +972,14 @@ a.nav-pill-link:hover {
   border-color: var(--amber);
 }
 
-/* Header actions group — holds chapters dropdown + shop pill side by side */
+/* Header actions group - holds chapters dropdown + shop pill side by side */
 .header-actions {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-/* Chapters dropdown — native <details>/<summary> for click-to-toggle */
+/* Chapters dropdown - native <details>/<summary> for click-to-toggle */
 .chapters-menu { position: relative; }
 .chapters-menu summary {
   list-style: none;
