@@ -254,10 +254,13 @@ STAT 3 · LABEL  [[s01.stat.3.lbl]]
 Made in Missouri
 
 TESTIMONIAL · NAME (pull-quote, no video yet)  [[s01.testimonial.name]]
-"Like a completely different machine."
+"Almost 22 years and close to 10,000 quilts later, I would still order a Gammill."
 
 TESTIMONIAL · META  [[s01.testimonial.meta]]
-Ann Olson · 1998 Classic Minus retrofitted to Statler Ascend
+Janet-Lee Santeusanio · Classic Plus owner since 1999
+
+TESTIMONIAL · SOURCE (canonical record)
+~/projects/_shared/testimonials/owners/janet-lee-santeusanio.md · permission: yes
 
 DEEPER · LABEL  [[s01.deeper.label]]
 Want to go deeper?
@@ -559,10 +562,13 @@ BULLETS  [[s06.body.bullets]]
 - Phone support during business hours, by a real human
 
 TESTIMONIAL · NAME (pull-quote, no video yet)  [[s06.testimonial.name]]
-"I was scared about the learning curve. My machine is extremely easy to use. It's magical."
+"I was a little scared about the learning curve but have found my machine extremely easy to use. This has made quilting a joy - it is exciting to work on each quilt with EASE. It's magical."
 
 TESTIMONIAL · META  [[s06.testimonial.meta]]
-Marnie Bryce · Vision 2.0 18" owner · British Columbia
+Marnie Bryce · Vision 2.0 18" owner
+
+TESTIMONIAL · SOURCE (canonical record)
+~/projects/_shared/testimonials/owners/marnie-bryce.md · permission: yes
 
 DEEPER · LABEL  [[s06.deeper.label]]
 Want to go deeper?

@@ -1,5 +1,20 @@
 # Testimonial Inventory - Why Gammill Tour
 
+> ⚠️ **STATUS — partially superseded.** The canonical home for owner testimonials is now `~/projects/_shared/testimonials/` (see `SCHEMA.md` and `README.md` in that repo). All testimonial pulls for production should resolve through that store — it carries authoritative `permission:` status which determines what's usable on a public surface vs. internal only.
+>
+> **What this file still covers (kept alive):** the per-chapter mapping for THIS specific tour (which owner appears in which chapter slot, and why). The canonical store is general-purpose; this inventory is tour-specific.
+>
+> **Audit pass 2026-05-11:**
+> - 7 of 9 tour testimonials are `permission: yes` in the canonical store ✓
+> - **Ann Olson swapped out** of Ch 1 — `permission: unknown` in store. Replaced with **Janet-Lee Santeusanio** (`permission: yes`, *"22 years, 10,000 quilts, would still order"*).
+> - **Robin D. swapped out** of Ch 8 — not present in canonical store. Replaced with **Marnie Bryce** (`permission: yes`, the *"scared of the learning curve... magical"* quote).
+>
+> When updating testimonials in the tour going forward: always verify the owner's file in `~/projects/_shared/testimonials/owners/` has `permission: yes` before wiring them into a chapter card. Per SCHEMA §1.1, `unknown` is NOT `no` — but it IS "internal-only" and shouldn't appear in the public tour.
+
+---
+
+## Original inventory below (kept for cross-reference)
+
 Source: `Testimonial Copy.xlsx` (Google Drive, owned by shandibrinkman@gammill.com).
 Pulled 2026-05-08. ~37 unique owners across at least three tabs:
 - **Tab A** - *wpforms-60084-Share-our-Story-2* (long-form testimonials with pre-edited "USED IN NEW LEAD EMAILS" and "USED IN CUSTOMER PROPOSAL 2021" curated versions and named pop-out lines)
