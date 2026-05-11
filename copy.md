@@ -217,7 +217,7 @@ HEADLINE  [[s01.h1]]
 Built to serve<br>generations of Quilters.
 
 LEDE (italic serif)  [[s01.lede]]
-A Gammill is designed for a shockingly long life. **The Gammill machine you order today will outlast all 8 billion humans on earth.** It will bring joy to many generations of Quilters.
+A Gammill is designed for a shockingly long life. **The Gammill machine you order today will bring joy to many generations of Quilters.**
 
 LEDE SUBTEXT (small, muted, sits under the lede)  [[s01.lede.subtext]]
 All Gammill machines since 1997 are functioning today unless they were lost to fire, flood, or other external disaster, or unless one is waiting to be retrofitted.
