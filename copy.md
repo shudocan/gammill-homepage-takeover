@@ -40,28 +40,30 @@ KICKER  [[index.kicker]]
 A machine tour
 
 HEADLINE  [[index.h1]]
-Why Serious Quilters<br>Choose Gammill
+Why So Many Quilters<br>Choose Gammill
 
 LEDE (italic serif)  [[index.lede]]
-Learn what makes the Gammill totally unique.
+Learn what makes the Gammill ownership experience unique.
 
 PRIMARY CTA  [[index.cta]]
 Begin the Tour →
 
 META METRIC 1 · VALUE  [[index.meta.1.val]]
-9 chapters
+11 mini topics
 META METRIC 1 · LABEL  [[index.meta.1.lbl]]
-One topic per step
+Easy to understand
 
 META METRIC 2 · VALUE  [[index.meta.2.val]]
-~8 minutes
+Only about 5 min
 META METRIC 2 · LABEL  [[index.meta.2.lbl]]
-At your pace
+Learn at your pace
 
 META METRIC 3 · VALUE  [[index.meta.3.val]]
-Real owners
+Hear from real owners
 META METRIC 3 · LABEL  [[index.meta.3.lbl]]
-Every step
+Every step of the way
+
+(Metric 4 "No email / Open all the way" removed per 2026-05-11 edit.)
 
 TOC SECTION HEADLINE  [[index.toc.h2]]
 What this tour covers
