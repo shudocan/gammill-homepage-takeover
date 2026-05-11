@@ -302,13 +302,13 @@ BODY HEADLINE  [[s02.body.h2]]
 Mass, alignment, and components built for a workhorse lifetime.
 
 BODY · OPENING PARAGRAPH  [[s02.body.p1]]
-The Gammill machine head is an investment-cast, fully aluminum body. Not a stamped or molded shell, not a lighter welded sheet-aluminum substitute. The choice of investment casting is intentional - it dampens the vibration that plagues cheaper machines, holds critical parts aligned correctly through several human lifetimes of stitching, and delivers smoother curves and lines of stitching.
+The Gammill machine head is constructed inside a single cast-aluminum body. Other machines sacrifice strength on the altar of ease of assembly (clamshell) or avoid investing in molds by using extrusions or sheets of aluminum. The choice of casting is intentional - it damps vibrations for quieter, vibration-free operation, keeps critical parts aligned correctly through lifetimes of stitching, and delivers smoother curves and lines of stitching.
 
 BODY · PARAGRAPH 2  [[s02.body.p2]]
 Inside is where the differences are: all industrial mechanisms with continuous lubrication, motors built for sustained use, and electronics proven over decades. The result is a machine **proven to work** day after day, year after year, and not let you down.
 
 BULLETS (one per line, prefix with `- `)  [[s02.body.bullets]]
-- Investment-cast aluminum head - not stamped, molded, or welded
+- Cast aluminum machine head
 - American-made motor rated for commercial use
 - Steel and aluminum handles and latches - we hate plastic too
 - **Curved throat profile** - full quilting space stays available as the quilt rolls up onto the take-up bar
