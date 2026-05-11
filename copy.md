@@ -315,10 +315,13 @@ BULLETS (one per line, prefix with `- `)  [[s02.body.bullets]]
 - Industrial build carried throughout the entire system
 
 PULL QUOTE · BODY  [[s02.quote.body]]
-I immediately fell in love with the Vision machine. My husband loved the Gammill frame. We both loved the solid workmanship.
+Gammills are the best (and I have used many brands at different show classes) and our frames are the sturdiest - important to me!
 
 PULL QUOTE · CITE (bold name + ·-separated meta)  [[s02.quote.cite]]
-**Judy Abeel** · Vision owner since 2010 · retrofitted to Statler in 2019 · Michigan
+**Nancy Hart-Kline** · 2006 Classic Plus owner · retrofitted to Statler
+
+PULL QUOTE · SOURCE (canonical record)
+~/projects/_shared/testimonials/owners/nancy-hart-kline.md · permission: yes
 
 DEEPER · LABEL  [[s02.deeper.label]]
 Want to go deeper?
@@ -644,10 +647,13 @@ STAT 3 · LABEL  [[s07.stat.3.lbl]]
 Lifetime warranty
 
 PULL QUOTE · BODY  [[s07.quote.body]]
-Customer service helped me diagnose problems.
+My initial reason for buying a Gammill was its reputation for great tech support and free upgrades, which I have used at every opportunity. I knew I would be fixing any problems myself since dealers are at least 8 hours away.
 
 PULL QUOTE · CITE  [[s07.quote.cite]]
-**MeLisa Peyton** · Gammill owner · Arizona
+**Carol Gutierrez** · 2-Statler owner · New Mexico
+
+PULL QUOTE · SOURCE (canonical record)
+~/projects/_shared/testimonials/owners/carol-gutierrez.md · permission: yes
 
 DEEPER · LABEL  [[s07.deeper.label]]
 Want to go deeper?
