@@ -293,7 +293,7 @@ HEADLINE  [[s02.h1]]
 Built like the<br>industrial machine it is.
 
 LEDE  [[s02.lede]]
-Investment-cast aluminum chassis. Steel shafts. Hardened steel gears. Curved throat profile that keeps full quilting space as the quilt rolls up. No timing belt to stretch, slip, or leave you waiting on repairs. Components built for commercial, not occasional, use.
+Cast aluminum chassis. Steel shafts. Hardened steel gears. Curved throat profile that keeps full quilting space as the quilt rolls up. No timing belt to stretch, slip, or leave you waiting on repairs. Components built for commercial, not occasional, use.
 
 BODY KICKER  [[s02.body.kicker]]
 The machine itself
