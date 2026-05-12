@@ -419,10 +419,10 @@ KICKER  [[s04.kicker]]
 Why Gammill - Chapter 4
 
 HEADLINE  [[s04.h1]]
-The least-fussy<br>longarm you can buy.
+The least-fussy<br>longarm ever.
 
 LEDE  [[s04.lede]]
-Stitch quality isn't defined by stitch regulation or motor horsepower. It's about **tension that stays put** and a machine that moves **effortlessly**, as if it was reading your mind. Who wants to be ripping out stitching and inventing expletives?
+Stitch quality is hard to define, but you know it when you see it. The trickier thing is for a machine to deliver quality stitches morning, noon, and evening. We're talking about **tension that stays put** and doesn't surprise you with loops, eyelashes, pokies, and railroad tracks. Who wants to be ripping out stitching and inventing expletives?
 
 BODY KICKER  [[s04.body.kicker]]
 What stitch quality is actually about
