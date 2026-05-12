@@ -472,6 +472,59 @@ a:hover { color: var(--slate-dark); }
 }
 .flow-btn.outline:hover { background: var(--ink); color: white; }
 
+/* ======= Above-the-fold advance CTA (in chapter hero) ======= */
+.hero-advance {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 14px 26px;
+  background: var(--amber);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-radius: var(--rad-pill);
+  box-shadow: 0 6px 18px rgba(250, 173, 61, 0.32);
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+}
+.hero-advance:hover {
+  background: var(--amber-hover);
+  color: var(--ink);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(243, 144, 0, 0.42);
+}
+.hero-advance .arrow { font-size: 16px; line-height: 1; }
+
+/* ======= Small inconspicuous back arrow (bottom flow-nav) ======= */
+.flow-btn-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  flex: 0 0 auto;
+}
+.flow-btn-back:hover {
+  background: var(--bg-2);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.flow-btn-back:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
 /* ======= Mission / Vision closer (Ch 9, before final CTA) ======= */
 .mission-closer {
   max-width: var(--max-w);
