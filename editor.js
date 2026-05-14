@@ -72,7 +72,50 @@
     <button class="ed-btn ed-save" hidden title="Save changes to localStorage">💾 Save</button>
     <button class="ed-btn ed-copy" hidden title="Copy changes to clipboard">📋 Copy Changes</button>
     <button class="ed-btn ed-reset" hidden title="Discard all saved changes">🗑️ Reset</button>
+    <button class="ed-btn ed-help" hidden title="How does this work?">❔ How to use</button>
     <span class="ed-status"></span>
+  `;
+
+  // ---------- Help modal ----------
+  const helpModal = document.createElement('div');
+  helpModal.className = 'editor-help-modal';
+  helpModal.setAttribute('data-no-edit', 'true');
+  helpModal.setAttribute('hidden', '');
+  helpModal.innerHTML = `
+    <div class="ed-help-backdrop"></div>
+    <div class="ed-help-card" role="dialog" aria-modal="true" aria-labelledby="ed-help-title">
+      <button class="ed-help-close" aria-label="Close help">×</button>
+      <h2 id="ed-help-title">You're in Edit Mode</h2>
+      <p class="ed-help-lede">Click any highlighted text region on the page and type to change it. Your changes save automatically to <strong>your browser</strong> as you go - they don't get sent anywhere yet.</p>
+
+      <h3>How to send your changes to Andrew</h3>
+      <ol>
+        <li>Make your edits on this page.</li>
+        <li>Click <strong>📋 Copy Changes</strong> in the toolbar (bottom-left). A diff of your changes lands on your clipboard.</li>
+        <li>Paste it in Slack / email / wherever you talk to Andrew.</li>
+      </ol>
+
+      <h3>⚠️ Each page is separate - copy before you navigate</h3>
+      <p>Edits on Chapter 4 are stored separately from edits on Chapter 7. <strong>Copy Changes only exports the current page.</strong> Before you click "Continue" or jump to another chapter, hit Copy Changes and stash that page's diff. If you forget, your changes are still in your browser - but you'll need to come back to each page individually to export them.</p>
+
+      <h3>What to keep in mind</h3>
+      <ul>
+        <li><strong>Other reviewers can't see your edits.</strong> Each person is in their own private session. Andrew reconciles everyone's diffs.</li>
+        <li><strong>Your edits live in this browser only.</strong> Different laptop, different browser, or cleared cookies → edits gone. Send the diff while it's fresh.</li>
+        <li><strong>If Andrew pushes a new version</strong> while you're editing, the underlying copy may shift under you. Copy your edits often.</li>
+      </ul>
+
+      <h3>Quick keys</h3>
+      <ul class="ed-help-keys">
+        <li><kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> - toggle edit mode</li>
+        <li><kbd>Cmd/Ctrl</kbd> + <kbd>S</kbd> - save</li>
+        <li><kbd>Esc</kbd> - close this help</li>
+      </ul>
+
+      <div class="ed-help-actions">
+        <button class="ed-btn ed-help-ok">Got it</button>
+      </div>
+    </div>
   `;
 
   // ---------- Styles ----------
@@ -141,6 +184,114 @@
     .editor-toolbar, .editor-toolbar * {
       user-select: none;
     }
+
+    /* Help modal */
+    .editor-help-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1a1a1a;
+    }
+    .editor-help-modal[hidden] { display: none; }
+    .ed-help-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(2px);
+    }
+    .ed-help-card {
+      position: relative;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+      max-width: 640px;
+      width: 100%;
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
+      padding: 36px 40px 32px;
+      line-height: 1.55;
+      font-size: 15px;
+    }
+    .ed-help-card h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #111;
+    }
+    .ed-help-card h3 {
+      margin: 22px 0 8px;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #111;
+    }
+    .ed-help-card p,
+    .ed-help-card ol,
+    .ed-help-card ul {
+      margin: 0 0 10px;
+      color: #333;
+    }
+    .ed-help-card ol,
+    .ed-help-card ul {
+      padding-left: 22px;
+    }
+    .ed-help-card li {
+      margin: 4px 0;
+    }
+    .ed-help-card .ed-help-lede {
+      font-size: 1.02rem;
+      color: #1f1f1f;
+    }
+    .ed-help-card kbd {
+      display: inline-block;
+      padding: 1px 6px;
+      border: 1px solid #ccc;
+      border-bottom-width: 2px;
+      border-radius: 4px;
+      background: #f6f6f6;
+      font-family: ui-monospace, SF Mono, Menlo, monospace;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #222;
+    }
+    .ed-help-card .ed-help-keys li {
+      font-size: 13.5px;
+      color: #444;
+    }
+    .ed-help-card .ed-help-close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      background: transparent;
+      border: 0;
+      font-size: 28px;
+      line-height: 1;
+      color: #888;
+      cursor: pointer;
+      padding: 4px 8px;
+    }
+    .ed-help-card .ed-help-close:hover { color: #111; }
+    .ed-help-card .ed-help-actions {
+      margin-top: 22px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .ed-help-card .ed-help-ok {
+      padding: 10px 22px;
+      border: 1px solid #F39000;
+      background: #FAAD3D;
+      color: #111;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .ed-help-card .ed-help-ok:hover { background: #F39000; }
   `;
 
   document.head.appendChild(style);
@@ -150,8 +301,25 @@
   function mount() {
     if (document.querySelector('.editor-toolbar')) return; // already mounted
     document.body.appendChild(toolbar);
+    document.body.appendChild(helpModal);
     wire();
     restore();
+  }
+
+  // ---------- Help modal handlers ----------
+  const HELP_SEEN_KEY = 'gammill-tour-editor-help-seen';
+  function openHelp() {
+    helpModal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      const closeBtn = helpModal.querySelector('.ed-help-close');
+      if (closeBtn) closeBtn.focus();
+    }, 0);
+  }
+  function closeHelp() {
+    helpModal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+    try { localStorage.setItem(HELP_SEEN_KEY, '1'); } catch (e) {}
   }
 
   // ---------- Helpers ----------
@@ -242,7 +410,12 @@
     });
     toolbar.querySelector('.ed-toggle').textContent = '👁️ View';
     toolbar.querySelector('.ed-save').hidden = false;
+    toolbar.querySelector('.ed-help').hidden = false;
     setStatus(`Editing - ${originals.size} regions. Auto-save on.`);
+    // Auto-open help the first time this browser enters edit mode
+    try {
+      if (!localStorage.getItem(HELP_SEEN_KEY)) openHelp();
+    } catch (e) {}
   }
 
   function exitEditMode() {
@@ -273,6 +446,7 @@
     });
     toolbar.querySelector('.ed-toggle').textContent = '✏️ Edit';
     toolbar.querySelector('.ed-save').hidden = true;
+    toolbar.querySelector('.ed-help').hidden = true;
   }
 
   // ---------- Save / restore ----------
@@ -403,6 +577,18 @@
     toolbar.querySelector('.ed-save').addEventListener('click', save);
     toolbar.querySelector('.ed-copy').addEventListener('click', copyChanges);
     toolbar.querySelector('.ed-reset').addEventListener('click', reset);
+    toolbar.querySelector('.ed-help').addEventListener('click', openHelp);
+
+    // Help-modal dismiss: × button, "Got it" button, backdrop click, Escape key
+    helpModal.querySelector('.ed-help-close').addEventListener('click', closeHelp);
+    helpModal.querySelector('.ed-help-ok').addEventListener('click', closeHelp);
+    helpModal.querySelector('.ed-help-backdrop').addEventListener('click', closeHelp);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !helpModal.hasAttribute('hidden')) {
+        e.preventDefault();
+        closeHelp();
+      }
+    });
 
     // Flush pending auto-save synchronously before navigation/refresh
     window.addEventListener('beforeunload', () => {
