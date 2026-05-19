@@ -93,18 +93,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
     </div>
     <aside class="aside" data-reveal data-delay="2">
-      <div class="testimonial-card video-trigger" data-video="bs0XZV5U_D4" role="button" tabindex="0" aria-label="Play table & stand owner testimonials">
-        <div class="testimonial-video with-image" style="--video-image: url('assets/web/step3-b.jpg')">
-          <span class="play-btn" aria-hidden="true"></span>
-        </div>
-        <div class="testimonial-meta">
-          <div>
-            <strong>"Gammill bars don't bend and sag."</strong><br>
-            Real owners · table &amp; stand testimonials
-          </div>
-          <span class="duration">▶ Watch</span>
-        </div>
+      <div class="video-embed" style="position:relative; padding-top:56.25%; margin:0; border-radius:6px; overflow:hidden; background:#000; box-shadow:0 8px 24px rgba(0,0,0,0.12);">
+        <iframe id="tableVideo" src="https://www.youtube.com/embed/bs0XZV5U_D4?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=bs0XZV5U_D4&amp;controls=0&amp;disablekb=1&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;enablejsapi=1" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" title="Gammill table & stand owner testimonials - ambient background, click sound to listen" loading="lazy"></iframe>
+        <button id="tableSoundToggle" type="button" aria-label="Unmute video sound" style="position:absolute; bottom:14px; right:14px; z-index:2; display:flex; align-items:center; gap:6px; padding:8px 14px; background:rgba(0,0,0,0.62); color:#fff; border:0; border-radius:999px; font-family:Raleway, sans-serif; font-size:13px; font-weight:600; letter-spacing:0.02em; cursor:pointer; -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); transition:background 0.15s;">
+          <span class="vst-icon" aria-hidden="true" style="font-size:15px; line-height:1;">🔊</span>
+          <span class="vst-text">Sound</span>
+        </button>
       </div>
+      <p style="margin: 0.7em 0 0; font-size: 0.86em; color: #6a6a6a; font-family: 'Open Sans', sans-serif; font-style: italic; text-align: center;"><strong style="color: #1a1a1a; font-style: normal;">"Gammill bars don't bend and sag."</strong> &nbsp;·&nbsp; Real owners · table &amp; stand testimonials</p>
     </aside>
   </div>
 
@@ -136,6 +132,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
+<!-- YouTube sound-toggle for the table testimonial video (postMessage to iframe; no API load needed) -->
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    var iframe = document.getElementById('tableVideo');
+    var toggle = document.getElementById('tableSoundToggle');
+    if (!iframe || !toggle) return;
+    var muted = true;
+    function send(cmd) {
+      try {
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: cmd, args: '' }), '*');
+      } catch (e) {}
+    }
+    toggle.addEventListener('click', function () {
+      muted = !muted;
+      send(muted ? 'mute' : 'unMute');
+      toggle.querySelector('.vst-icon').textContent = muted ? '🔊' : '🔇';
+      toggle.querySelector('.vst-text').textContent = muted ? 'Sound' : 'Mute';
+      toggle.setAttribute('aria-label', muted ? 'Unmute video sound' : 'Mute video sound');
+    });
+    toggle.addEventListener('mouseenter', function () { toggle.style.background = 'rgba(0,0,0,0.82)'; });
+    toggle.addEventListener('mouseleave', function () { toggle.style.background = 'rgba(0,0,0,0.62)'; });
+  });
+</script>
 <script>
   (function () {
     const lb = document.querySelector('.video-lightbox');

@@ -209,6 +209,133 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </main>
 
+<!-- Business testimonial banner - horizontal auto-scroll marquee, full-width below the body content -->
+<style>
+  .biz-banner { width: 100%; background: #f6f4ef; padding: 3em 0 3.2em; overflow: hidden; margin: 0; position: relative; }
+  .biz-banner__title { text-align: center; font-family: Raleway, sans-serif; font-size: 0.78em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: #6b6051; margin: 0 0 1.8em; padding: 0 24px; }
+  .biz-banner__track { display: flex; gap: 22px; width: max-content; animation: biz-scroll 80s linear infinite; padding-left: 22px; }
+  .biz-banner:hover .biz-banner__track,
+  .biz-banner:focus-within .biz-banner__track { animation-play-state: paused; }
+  @keyframes biz-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+  .biz-card { flex: 0 0 326px; background: #fff; border-radius: 8px; padding: 22px 24px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); display: flex; flex-direction: column; min-height: 218px; }
+  .biz-card__stars { color: #FAAD3D; letter-spacing: 0.05em; margin-bottom: 12px; font-size: 1.05em; line-height: 1; }
+  .biz-card__quote { font-family: 'Open Sans', sans-serif; font-size: 0.95em; line-height: 1.5; color: #1f2937; flex: 1; margin: 0 0 14px; }
+  .biz-card__name { font-family: Raleway, sans-serif; font-size: 0.92em; font-weight: 700; color: #2c2c2c; letter-spacing: 0.02em; }
+  .biz-card__role { display: block; font-weight: 400; color: #6b7280; font-style: italic; font-size: 0.82em; margin-top: 2px; letter-spacing: 0; }
+  @media (max-width: 640px) { .biz-card { flex: 0 0 280px; padding: 18px 20px; min-height: 200px; } }
+  @media (prefers-reduced-motion: reduce) { .biz-banner__track { animation: none; } }
+</style>
+<section class="biz-banner" aria-label="Gammill business owner testimonials" data-reveal>
+  <div class="biz-banner__title">From Gammill business owners</div>
+  <div class="biz-banner__track">
+    <!-- 10 unique cards, then duplicated for seamless loop -->
+    <article class="biz-card">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"Each long arm has probably made <strong>$200,000</strong> for us over those years. It's buying our house now."</p>
+      <div class="biz-card__name">Ann O.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"When I upgraded my machine, <strong>I paid it off in six months.</strong> This business can absolutely pay for itself."</p>
+      <div class="biz-card__name">Kat F.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"Bought my Gammill Classic Plus in 2011. Started quilting for others to pay for it. <strong>Had it paid for in two years.</strong> It is still going strong."</p>
+      <div class="biz-card__name">Pamela Burch<span class="biz-card__role">Classic Plus owner since 2011 · Washington</span></div>
+    </article>
+    <article class="biz-card">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"I had just shut down a business and had a brand new baby. I thought, I'm going to make money at this, and <strong>I can work at home with my baby.</strong> That was huge for me."</p>
+      <div class="biz-card__name">Sandra K.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"I put it to work part-time in 2014. My clientele grew to <strong>80 within 2 years.</strong> By 2018 I had over 100 clients and decided I could manage payments for a 30" Statler."</p>
+      <div class="biz-card__name">Cathy Tullos<span class="biz-card__role">Vision 18-8 → 30" Statler</span></div>
+    </article>
+    <article class="biz-card">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"It's been growing about <strong>20% every year.</strong> We've put the work in to have a real good system that works really well."</p>
+      <div class="biz-card__name">Doc W.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"There's way more quilts out there to quilt than there are good quilters. <strong>I never even think about competition.</strong>"</p>
+      <div class="biz-card__name">Jan C.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"It's just a matter of <strong>how much money do you wanna make,</strong> really. It's crucial to me that I get to set my own hours."</p>
+      <div class="biz-card__name">Jami G.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"Anyone who has the drive to learn new things and connect with people can do it. It's a great way to <strong>take control of your own schedule.</strong>"</p>
+      <div class="biz-card__name">Tucker N.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"Finally decided to retrofit to a Statler and so glad I did - <strong>my income jumped significantly</strong> with the ability to knock out an e2e so quickly."</p>
+      <div class="biz-card__name">Nancy Hart-Kline<span class="biz-card__role">Classic Plus, retrofitted to Statler</span></div>
+    </article>
+    <!-- Duplicate set for seamless infinite loop -->
+    <article class="biz-card" aria-hidden="true">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"Each long arm has probably made <strong>$200,000</strong> for us over those years. It's buying our house now."</p>
+      <div class="biz-card__name">Ann O.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card" aria-hidden="true">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"When I upgraded my machine, <strong>I paid it off in six months.</strong> This business can absolutely pay for itself."</p>
+      <div class="biz-card__name">Kat F.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card" aria-hidden="true">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"Bought my Gammill Classic Plus in 2011. Started quilting for others to pay for it. <strong>Had it paid for in two years.</strong> It is still going strong."</p>
+      <div class="biz-card__name">Pamela Burch<span class="biz-card__role">Classic Plus owner since 2011 · Washington</span></div>
+    </article>
+    <article class="biz-card" aria-hidden="true">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"I had just shut down a business and had a brand new baby. I thought, I'm going to make money at this, and <strong>I can work at home with my baby.</strong> That was huge for me."</p>
+      <div class="biz-card__name">Sandra K.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card" aria-hidden="true">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"I put it to work part-time in 2014. My clientele grew to <strong>80 within 2 years.</strong> By 2018 I had over 100 clients and decided I could manage payments for a 30" Statler."</p>
+      <div class="biz-card__name">Cathy Tullos<span class="biz-card__role">Vision 18-8 → 30" Statler</span></div>
+    </article>
+    <article class="biz-card" aria-hidden="true">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"It's been growing about <strong>20% every year.</strong> We've put the work in to have a real good system that works really well."</p>
+      <div class="biz-card__name">Doc W.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card" aria-hidden="true">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"There's way more quilts out there to quilt than there are good quilters. <strong>I never even think about competition.</strong>"</p>
+      <div class="biz-card__name">Jan C.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card" aria-hidden="true">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"It's just a matter of <strong>how much money do you wanna make,</strong> really. It's crucial to me that I get to set my own hours."</p>
+      <div class="biz-card__name">Jami G.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card" aria-hidden="true">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"Anyone who has the drive to learn new things and connect with people can do it. It's a great way to <strong>take control of your own schedule.</strong>"</p>
+      <div class="biz-card__name">Tucker N.<span class="biz-card__role">Longarm Business Owner</span></div>
+    </article>
+    <article class="biz-card" aria-hidden="true">
+      <div class="biz-card__stars" aria-hidden="true">★★★★★</div>
+      <p class="biz-card__quote">"Finally decided to retrofit to a Statler and so glad I did - <strong>my income jumped significantly</strong> with the ability to knock out an e2e so quickly."</p>
+      <div class="biz-card__name">Nancy Hart-Kline<span class="biz-card__role">Classic Plus, retrofitted to Statler</span></div>
+    </article>
+  </div>
+</section>
+
 <nav class="flow-nav">
   <div class="inner">
     <a href="11-community.html" class="flow-btn-back" aria-label="Back to Step 11: The Community" title="Back to Step 11: The Community">←</a>
