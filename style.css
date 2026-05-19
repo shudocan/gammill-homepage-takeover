@@ -1287,6 +1287,69 @@ a.nav-pill-link:hover {
   margin-left: 8px;
 }
 
+/* ---------- Testimonial slider (Ch 9) ---------- */
+.testimonial-slider {
+  position: relative;
+  /* Container height fixed so the layout doesn't jump as cards rotate.
+     Sized to hold the longest of the included testimonials at typical aside widths. */
+  min-height: 460px;
+}
+.ts-track {
+  position: relative;
+  min-height: 410px;
+}
+.ts-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.55s ease, visibility 0.55s ease;
+  pointer-events: none;
+}
+.ts-card.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+/* The pullquote inside takes its own padding from its existing styling */
+.ts-card .pullquote-editorial { margin: 0; }
+
+.ts-dots {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+}
+.ts-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid rgba(0, 0, 0, 0.32);
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.ts-dot:hover { border-color: var(--amber, #d4a534); }
+.ts-dot.is-active {
+  background: var(--amber, #d4a534);
+  border-color: var(--amber, #d4a534);
+  transform: scale(1.15);
+}
+@media (max-width: 880px) {
+  .testimonial-slider { min-height: 480px; }
+  .ts-track { min-height: 430px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ts-card { transition: none; }
+}
+
 /* ---------- Business Plan Builder modal ---------- */
 /* Inline trigger button (matches .hero-advance amber pill style) */
 .bpb-trigger {
