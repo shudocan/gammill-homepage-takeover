@@ -89,19 +89,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         .cf-row { margin-bottom: 1em; }
         .cf-row:last-of-type { margin-bottom: 0.4em; }
         .cf-label { font-family: Raleway, sans-serif; font-size: 0.78em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #4b5563; margin-bottom: 0.45em; }
-        .cf-bar { display: flex; height: 72px; border-radius: 4px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .cf-bar { display: flex; height: 84px; border-radius: 4px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
         .cf-seg { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 6px 8px; color: #fff; font-family: Raleway, sans-serif; text-align: center; overflow: hidden; min-width: 0; }
         .cf-amount { font-size: 1.02em; font-weight: 700; line-height: 1; white-space: nowrap; }
         .cf-tag { font-size: 0.7em; opacity: 0.92; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 5px; line-height: 1.1; }
+        .cf-sub { font-size: 0.74em; opacity: 0.88; margin-top: 4px; font-style: italic; line-height: 1.1; white-space: nowrap; }
         .cf-seg.financing { background: #b04a2a; }
         .cf-seg.expenses { background: #6b7280; }
         .cf-seg.pocket { background: #d4a534; color: #1a1a1a; }
         .cf-foot { margin: 0.7em 0 0; font-size: 0.83em; color: #6b7280; font-style: italic; font-family: 'Open Sans', sans-serif; }
+        /* Context bar - dark band above a breakdown bar; the two render as one stacked unit */
+        .cf-context-bar { background: #2c2c2c; color: #fff; font-family: Raleway, sans-serif; font-size: 0.9em; font-weight: 600; letter-spacing: 0.02em; text-align: center; padding: 9px 12px; border-radius: 4px 4px 0 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .cf-context-bar + .cf-bar { border-radius: 0 0 4px 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
         @media (max-width: 640px) {
-          .cf-bar { height: 78px; }
+          .cf-bar { height: 92px; }
           .cf-amount { font-size: 0.9em; }
           .cf-tag { font-size: 0.62em; }
+          .cf-sub { font-size: 0.66em; }
           .cf-seg { padding: 4px 5px; }
+          .cf-context-bar { font-size: 0.8em; padding: 7px 10px; }
         }
       </style>
       <div class="cashflow-viz" data-reveal data-delay="2" role="img" aria-label="Monthly cashflow breakdown: while paying the loan, $1,100 goes to financing, $150 to expenses, $1,750 in your pocket. After the loan, $150 to expenses, $2,850 in your pocket.">
@@ -146,20 +152,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="cashflow-viz" style="background: transparent; padding: 0; margin: 1.2em 0 0.6em;" role="img" aria-label="A $35,000 car driven for 7 years and sold for $14,000 has a real cost of $21,000 - about $3,000 per year. A $58,000 Statler Ascend 30 inch used 7 years and sold for $47,500 has a real cost of just $10,500 - about $1,500 per year.">
           <div class="cf-row">
-            <div class="cf-label" style="display:flex; align-items:center; gap:0.55em;">
-              <svg viewBox="0 0 24 16" width="28" height="18" fill="currentColor" aria-hidden="true" style="flex-shrink:0;">
-                <path d="M2.2 11 L3.3 7 Q3.5 6 4.5 6 L19.5 6 Q20.5 6 20.7 7 L21.8 11 L21.8 13 L19.8 13 L19.8 11 L4.2 11 L4.2 13 L2.2 13 Z"/>
-                <circle cx="6.5" cy="13" r="2.2" fill="#fff" stroke="currentColor" stroke-width="1"/>
-                <circle cx="6.5" cy="13" r="1"/>
-                <circle cx="17.5" cy="13" r="2.2" fill="#fff" stroke="currentColor" stroke-width="1"/>
-                <circle cx="17.5" cy="13" r="1"/>
-              </svg>
-              <span>A $35,000 car · driven 7 years · sold for $14,000</span>
-            </div>
+            <div class="cf-context-bar">$35,000 Car, owned 7 years then sold</div>
             <div class="cf-bar">
               <div class="cf-seg financing" style="flex: 21000;">
                 <div class="cf-amount">$21,000</div>
                 <div class="cf-tag">Real cost</div>
+                <div class="cf-sub">(that's $3,000/yr.)</div>
               </div>
               <div class="cf-seg pocket" style="flex: 14000;">
                 <div class="cf-amount">$14,000</div>
@@ -168,21 +166,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
           <div class="cf-row">
-            <div class="cf-label" style="display:flex; align-items:center; gap:0.55em;">
-              <svg viewBox="0 0 24 16" width="28" height="18" fill="currentColor" aria-hidden="true" style="flex-shrink:0;">
-                <rect x="2" y="6" width="14" height="2.6" rx="0.3"/>
-                <rect x="14.5" y="6" width="2.5" height="6"/>
-                <rect x="13.6" y="11.4" width="4.2" height="1.4" rx="0.2"/>
-                <rect x="1" y="13.4" width="22" height="1.6" rx="0.3"/>
-                <rect x="2" y="13" width="2" height="0.8"/>
-                <rect x="20" y="13" width="2" height="0.8"/>
-              </svg>
-              <span>A Statler Ascend 30" · $58,000 · used 7 years · sold for $47,500</span>
-            </div>
+            <div class="cf-context-bar">$58,000 Statler Ascend 30", owned 7 years then sold</div>
             <div class="cf-bar">
               <div class="cf-seg financing" style="flex: 10500;">
                 <div class="cf-amount">$10,500</div>
                 <div class="cf-tag">Real cost</div>
+                <div class="cf-sub">(that's $1,500/yr.)</div>
               </div>
               <div class="cf-seg pocket" style="flex: 47500;">
                 <div class="cf-amount">$47,500</div>
@@ -190,7 +179,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
             </div>
           </div>
-          <p class="cf-foot" style="text-align:center; margin-top:1em;">That's <strong>~$3,000/year</strong> for the car. <strong>~$1,500/year</strong> for the Gammill - half the annual cost, on a machine that costs more upfront.</p>
+          <p class="cf-foot" style="text-align:center; margin-top:1em;">Half the annual cost - on a machine that costs more upfront.</p>
         </div>
 
         <p style="margin: 1.2em 0 0;">And it gets better with time. Gammill depreciation <strong>flatlines at around $1,000/year after year 10</strong>, so the real cost across decades drops even lower. Any income from customer quilting makes the real cost <em>negative</em>.</p>
