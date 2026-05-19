@@ -151,6 +151,15 @@ a:hover { color: var(--slate-dark); }
   color: white;
   border-bottom: 3px solid var(--amber);
 }
+/* Sticky header on mobile/tablet: keeps the Chapters dropdown and Shop pill
+   reachable as the reader scrolls down a long page. */
+@media (max-width: 880px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+}
 .site-header .inner {
   max-width: var(--max-w); margin: 0 auto;
   padding: 16px 24px;
@@ -729,6 +738,13 @@ a:hover { color: var(--slate-dark); }
 .price-table tr:last-child td { border-bottom: none; }
 .price-table .price { font-weight: 700; color: var(--ink); }
 .price-table .mo { color: var(--muted); font-size: 13px; }
+/* Mobile: tighten the price table and drop the included-panel from 2 columns to 1 */
+@media (max-width: 640px) {
+  .price-table th, .price-table td { padding: 10px 8px; font-size: 13px; }
+  .price-table th { font-size: 11px; letter-spacing: 0.02em; }
+  .price-table .mo { font-size: 12px; }
+  .included-panel ul { columns: 1 !important; column-gap: 0 !important; }
+}
 
 /* ======================================================================
    EDITORIAL DESIGN SYSTEM
@@ -1270,3 +1286,113 @@ a.nav-pill-link:hover {
   color: white; text-decoration: underline;
   margin-left: 8px;
 }
+
+/* ---------- Business Plan Builder modal ---------- */
+/* Inline trigger button (matches .hero-advance amber pill style) */
+.bpb-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.5em;
+  background: #FAAD3D;
+  color: #111;
+  border: 0;
+  border-radius: var(--rad-pill);
+  font-family: Raleway, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
+  box-shadow: 0 4px 14px rgba(244, 171, 11, 0.28);
+}
+.bpb-trigger:hover {
+  background: #F39000;
+  transform: translateY(-1px);
+}
+.bpb-trigger .bpb-arrow {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+/* Overlay + dialog */
+.bp-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+  display: none;
+  z-index: 9999;
+}
+.bp-overlay.is-open { display: block; }
+
+.bp-modal {
+  position: fixed; inset: 0;
+  display: none;
+  z-index: 10000;
+}
+.bp-modal.is-open { display: block; }
+
+.bp-dialog {
+  position: fixed;
+  left: 50%; top: 6vh;
+  transform: translateX(-50%) translateZ(0);
+  width: min(840px, 96vw);
+  height: 88vh;
+  max-height: 88vh;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  contain: layout paint style;
+  backface-visibility: hidden;
+}
+@media (max-width: 640px) {
+  .bp-dialog { top: 2vh; width: 96vw; height: 96vh; max-height: 96vh; }
+}
+
+.bp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px;
+  border-bottom: 1px solid #eee;
+}
+.bp-title {
+  margin: 0;
+  font: 700 20px/1.2 Raleway, system-ui, -apple-system, sans-serif;
+  color: #111827;
+}
+.bp-close {
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  color: #667085;
+  padding: 6px;
+  border-radius: 8px;
+}
+.bp-close:hover { background: #f2f4f7; }
+
+.bp-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 18px 22px 14px;
+  overflow: auto;
+  scrollbar-gutter: stable;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.18s ease;
+}
+.bp-body.is-ready { opacity: 1; visibility: visible; }
+
+body.bp-lock {
+  overflow: hidden;
+  touch-action: none;
+  scrollbar-gutter: stable;
+}
+.bp-body .hs-form-field { margin-bottom: 14px !important; }
+.bp-body input { font-variant-numeric: tabular-nums; }

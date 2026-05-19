@@ -78,15 +78,10 @@
       <h3 data-reveal data-delay="3" style="margin-top:1.8em;">What if I'm new at this?</h3>
       <p data-reveal data-delay="3"><strong>The Business Plan Builder.</strong> A free Gammill tool that uses AI to merge our domain knowledge with quilting-market trends in your zip code, then emails you an <strong>8-12 page customized business plan in 30 minutes.</strong> No upsell. No gated content. The whole plan.</p>
 
-      <!-- Wire `action` to the real HubSpot/CRM endpoint when ready. Submits should stay on-page (XHR or thank-you toast) so the reader doesn't leave the tour. -->
-      <div class="bpb-inline-form" data-reveal data-delay="3" style="margin:1.4em 0 1.8em; padding:1.5em 1.7em; background:rgba(212,165,52,0.08); border-left:3px solid #d4a534; border-radius:4px;">
-        <div style="font-family:Raleway, sans-serif; font-size:1.08em; font-weight:600; margin-bottom:0.5em; letter-spacing:0.01em;">Start your free Business Plan now.</div>
-        <p style="margin:0 0 1em; font-size:0.93em; opacity:0.88;">Enter your email address or mobile number and we'll send you a link to start the Builder. You stay right here.</p>
-        <form action="https://gammill.com/api/business-plan-builder/start" method="post" style="display:flex; gap:0.6em; flex-wrap:wrap; align-items:stretch;">
-          <label for="bpb-contact" style="position:absolute; left:-9999px;">Email address or mobile number</label>
-          <input id="bpb-contact" name="contact" type="text" required placeholder="email or mobile number" autocomplete="email" inputmode="email" style="flex:1 1 240px; min-width:200px; padding:0.75em 0.95em; border:1px solid rgba(0,0,0,0.22); border-radius:4px; font-size:1em; font-family:inherit; background:#fff; color:#111;">
-          <button type="submit" style="padding:0.75em 1.4em; background:#d4a534; color:#fff; border:0; border-radius:4px; font-weight:600; font-size:1em; cursor:pointer; font-family:inherit; white-space:nowrap;">Send me the link</button>
-        </form>
+      <div data-reveal data-delay="3" style="margin:1.6em 0 1.8em;">
+        <button type="button" class="bpb-trigger" aria-haspopup="dialog" aria-controls="bpModal">
+          Start the Business Plan Tool <span class="bpb-arrow">→</span>
+        </button>
       </div>
       <p data-reveal data-delay="3"><strong>The Accelerate Program.</strong> Think of it as a franchise where you keep all the profit. We share the playbook - marketing, pricing, customer acquisition, loyalty programs, the lessons our most successful owners learned the hard way - <strong>without taking a cut</strong> of what you earn.</p>
       <p data-reveal data-delay="3"><strong>Financing built for new businesses.</strong> Through our financing partner: <strong>48-hour approval, $99/mo for the first six months</strong> so you have time to ramp before payments scale up. The reason we structure it this way is simple - <strong>if we lend you the runway, it's because we believe you can fly.</strong></p>
@@ -107,7 +102,7 @@
         <div class="stat-editorial"><div class="num">$0</div><div class="lbl">Cost of the Business Plan Builder</div></div>
       </div>
 
-      <p class="lede-subtext" data-reveal data-delay="4" style="margin-top:2.4em; font-size:0.82em; color:#6a6a6a; font-style:italic; line-height:1.55;">Earnings and financial details in this chapter are easily verified by listening to (or watching) the <em>Quilting Business Success</em> podcast and by using the Business Plan Tool at gammill.com to generate your own plan based on your local market, the machine you choose, how many hours per week you're willing to work, and how you price your services. That said: just because others have been successful doesn't mean you can expect success with a grouchy attitude, or by returning quilts to customers that smell like smoke or are covered in pet fur.</p>
+      <p class="lede-subtext" data-reveal data-delay="4" style="margin-top:2.4em; font-size:0.92em; color:#6a6a6a; font-style:italic; line-height:1.55;">Earnings and financial details in this chapter are easily verified by listening to (or watching) the <em>Quilting Business Success</em> podcast and by using the Business Plan Tool at gammill.com to generate your own plan based on your local market, the machine you choose, how many hours per week you're willing to work, and how you price your services. That said: just because others have been successful doesn't mean you can expect success with a grouchy attitude, or by returning quilts to customers that smell like smoke or are covered in pet fur.</p>
     </div>
     <aside class="aside" data-reveal data-delay="2">
       <div class="pullquote-editorial">
@@ -136,7 +131,24 @@
   <div>© 2026 Gammill, Inc. · Built in West Plains, Missouri</div>
 </footer>
 
+<!-- Business Plan Builder modal (shared markup, loaded only on Ch 12 + Ch 13) -->
+<div class="bp-overlay" id="bpOverlay"></div>
+<div class="bp-modal" id="bpModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="bpTitle">
+  <div class="bp-dialog">
+    <div class="bp-header">
+      <h3 class="bp-title" id="bpTitle">Gammill Business Plan Tool</h3>
+      <button class="bp-close" id="bpCloseBtn" aria-label="Close">✕</button>
+    </div>
+    <div class="bp-body" id="bpBody">
+      <!-- HubSpot form embed (v1.2) -->
+      <script src="https://js.hsforms.net/forms/embed/20410581.js" defer></script>
+      <div class="hs-form-frame" data-region="na1" data-form-id="245d100e-3953-4f96-89fe-e64e3f84c9d1" data-portal-id="20410581"></div>
+    </div>
+  </div>
+</div>
+
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
+<script src="bpb-modal.js" defer></script>
 </body>
 </html>

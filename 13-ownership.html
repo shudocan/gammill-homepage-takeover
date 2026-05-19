@@ -106,6 +106,11 @@
       <h3 style="margin-top: 32px;" data-reveal data-delay="3">Will it pay for itself?</h3>
       <p data-reveal data-delay="3">Many Gammill owners run a home-based quilting business - and many of them pay the machine off in just a year or two.</p>
       <p data-reveal data-delay="3">Our <strong>Business Plan Builder</strong> is a short questionnaire that delivers an 8-to-12 page custom business plan to your inbox in 30 minutes - tailored to your region and your interests.</p>
+      <div data-reveal data-delay="3" style="margin:1.4em 0 0;">
+        <button type="button" class="bpb-trigger" aria-haspopup="dialog" aria-controls="bpModal">
+          Start the Business Plan Tool <span class="bpb-arrow">→</span>
+        </button>
+      </div>
     </div>
 
     <aside class="aside" data-reveal data-delay="2">
@@ -194,7 +199,24 @@
   <div>© 2026 Gammill, Inc. · Built in West Plains, Missouri</div>
 </footer>
 
+<!-- Business Plan Builder modal (shared markup, loaded only on Ch 12 + Ch 13) -->
+<div class="bp-overlay" id="bpOverlay"></div>
+<div class="bp-modal" id="bpModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="bpTitle">
+  <div class="bp-dialog">
+    <div class="bp-header">
+      <h3 class="bp-title" id="bpTitle">Gammill Business Plan Tool</h3>
+      <button class="bp-close" id="bpCloseBtn" aria-label="Close">✕</button>
+    </div>
+    <div class="bp-body" id="bpBody">
+      <!-- HubSpot form embed (v1.2) -->
+      <script src="https://js.hsforms.net/forms/embed/20410581.js" defer></script>
+      <div class="hs-form-frame" data-region="na1" data-form-id="245d100e-3953-4f96-89fe-e64e3f84c9d1" data-portal-id="20410581"></div>
+    </div>
+  </div>
+</div>
+
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
+<script src="bpb-modal.js" defer></script>
 </body>
 </html>
