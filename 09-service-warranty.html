@@ -145,8 +145,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3 class="bp-title" id="warrantyTitle">Gammill Limited Lifetime Warranty</h3>
       <button class="bp-close" id="warrantyCloseBtn" aria-label="Close">✕</button>
     </div>
-    <div class="bp-body is-ready" id="warrantyBody" style="padding:0;">
-      <iframe id="warrantyFrame" src="about:blank" data-src="https://gammill.com/warranty/" style="width:100%; height:100%; border:0; display:block;" title="Gammill Limited Lifetime Warranty" loading="lazy"></iframe>
+    <div class="bp-body is-ready" id="warrantyBody" style="font-family: 'Open Sans', system-ui, -apple-system, sans-serif; color: #1f2937; line-height: 1.65;">
+      <h4 style="font-family: Raleway, sans-serif; font-size: 1.05rem; font-weight: 700; margin: 0 0 0.8em; color: #111827;">Limited Lifetime Warranty</h4>
+      <p style="margin: 0 0 1em;">All new Gammill machines come with a lifetime mechanical warranty against defective materials and/or workmanship, a one-year tablet warranty, and three-year electrical parts warranty. <strong>The Gammill warranty also covers commercial use of the machines.</strong> This Warranty extends only to the original purchaser.</p>
+
+      <h4 style="font-family: Raleway, sans-serif; font-size: 1.05rem; font-weight: 700; margin: 1.6em 0 0.8em; color: #111827;">Warranty Details</h4>
+      <p style="margin: 0 0 1em;">Gammill warrants the Product for the lifetime of the Product against defective materials and/or workmanship. This Warranty excludes: (I) electronic and hydraulic parts (including, but not limited to, circuit boards, motors, lasers, and all other electronic and hydraulic components which are warranted for a period of three (3) years from the date the Product was purchased); (II) consumer electronic products (computers, monitors, tablets, etc., which are warranted by their respective manufacturer(s) and are subject to such separate warranties' provisions); (III) parts subject to normal wear and tear (including, but not limited to, needles, needle bars, bobbin cases, rotary hook assemblies, springs, wheels, O-rings, thread guides or belts); (IV) labor. However, labor shall be covered by this Warranty for a period of two (2) years from the date the Product was purchased.</p>
+      <p style="margin: 0 0 1em;">This Warranty does not cover: (I) periodic maintenance and repair or replacement of parts due to normal wear and tear; (II) postage, shipping, and handling costs and all risks to the Product associated with shipment or transport, or travel fees or trip service charges for in-home service; (III) damage resulting from misuse of the Product or failure to perform normal maintenance; (IV) service and/or repairs to the Product done by unauthorized service providers; (V) damage resulting from the use of non-Gammill authorized parts, supplies, or accessories; (VI) accidents, lightning, fires, water, power surges or any other cause beyond the reasonable control of Gammill.</p>
+      <p style="margin: 0 0 1em;">This Warranty applies to normal household or commercial use of the Product. This Warranty also applies to any replacement part or substitute part, subject to the exclusions, above. This Warranty will not apply if the serial number on the Product has been altered, deleted, removed or is illegible.</p>
+      <p style="margin: 0 0 1em;">If you suspect a defect in materials or workmanship of the Product, you must report the defect to Gammill. We will evaluate your report of a possible defect, determine if the defect is covered under this Warranty, and will (upon evaluation of aforementioned defect) repair or replace the defective part. Gammill reserves the right to supply refurbished parts or substitute parts provided that such parts conform to the specifications of Gammill.</p>
+      <p style="margin: 0 0 1em; font-size: 0.88em; color: #4b5563; letter-spacing: 0.01em;">This Warranty will be governed by the laws of the state in which you purchased the Product ("Applicable Law"). GAMMILL SHALL IN NO EVENT BE LIABLE FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING DIRECTLY OR INDIRECTLY FROM THE USE OR INABILITY TO USE THE PRODUCT FOR ANY REASON. OTHER THAN AS SPECIFIED IN THIS WARRANTY OR AS REQUIRED BY APPLICABLE LAW, ALL OTHER WARRANTIES, CONDITIONS OR LIABILITIES, WHETHER EXPRESS OR IMPLIED BY OPERATION OF LAW OR OTHERWISE, ARE EXPRESSLY EXCLUDED, AND GAMMILL DISCLAIMS ALL OTHER WARRANTIES, CONDITIONS OR LIABILITIES.</p>
     </div>
   </div>
 </div>
@@ -156,12 +164,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var modal = document.getElementById('warrantyModal');
     var overlay = document.getElementById('warrantyOverlay');
     var closeBtn = document.getElementById('warrantyCloseBtn');
-    var iframe = document.getElementById('warrantyFrame');
     var triggers = document.querySelectorAll('.warranty-trigger');
     if (!modal || !overlay || !triggers.length) return;
-    var loaded = false;
     function openModal() {
-      if (!loaded) { iframe.src = iframe.dataset.src; loaded = true; }
       document.body.classList.add('bp-lock');
       modal.classList.add('is-open');
       overlay.classList.add('is-open');
