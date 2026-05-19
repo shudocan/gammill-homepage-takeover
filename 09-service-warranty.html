@@ -232,7 +232,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
-<script src="testimonial-slider.js" defer></script>
+<!-- Testimonial slider (inline so deploy = one fewer file) -->
+<script defer>
+(function () {
+  function initSlider(root) {
+    var cards = root.querySelectorAll('.ts-card');
+    var dots = root.querySelectorAll('.ts-dot');
+    if (!cards.length || !dots.length) return;
+    var interval = parseInt(root.getAttribute('data-interval'), 10) || 9000;
+    var current = 0, timer = null, paused = false;
+    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function show(idx) {
+      idx = ((idx % cards.length) + cards.length) % cards.length;
+      cards.forEach(function (c, i) {
+        var active = i === idx;
+        c.classList.toggle('is-active', active);
+        c.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+      dots.forEach(function (d, i) {
+        var active = i === idx;
+        d.classList.toggle('is-active', active);
+        d.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      current = idx;
+    }
+    function next() { show(current + 1); }
+    function start() { if (reducedMotion || paused || timer) return; timer = setInterval(next, interval); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); start(); }
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function () { show(i); restart(); });
+    });
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1); restart(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1); restart(); }
+    });
+    root.addEventListener('mouseenter', function () { paused = true; stop(); });
+    root.addEventListener('mouseleave', function () { paused = false; start(); });
+    root.addEventListener('focusin', function () { paused = true; stop(); });
+    root.addEventListener('focusout', function () {
+      if (!root.contains(document.activeElement)) { paused = false; start(); }
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else if (!paused) start();
+    });
+    start();
+  }
+  function init() { document.querySelectorAll('.testimonial-slider').forEach(initSlider); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 <!-- Suppress HubSpot Conversations chat widget on tour pages (must run before the HubSpot loader) -->
 <script>window.hsConversationsSettings = { loadImmediately: false };</script>
 <!-- HubSpot tracking -->
