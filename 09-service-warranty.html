@@ -84,6 +84,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="kicker" data-reveal>The Gammill service network</div>
       <h2 data-reveal data-delay="1">A nationwide team of factory-trained Gammill technicians - and a warranty that actually means something.</h2>
       <p class="opener" data-reveal data-delay="2"><span class="dropcap">W</span>hen you call about your machine, the person on the other end of the line works for Gammill. When a tech drives to your house, they work for Gammill. Trained by us, certified by us, paid by us, accountable to us. No "authorized" middlemen. No franchise inconsistencies. No "your dealer can help with that."</p>
+
+      <div class="video-embed" data-reveal data-delay="2" style="position:relative; padding-top:56.25%; margin:1.4em 0 1.4em; border-radius:6px; overflow:hidden; background:#000; box-shadow:0 8px 24px rgba(0,0,0,0.12);">
+        <iframe id="switchersVideo" src="https://www.youtube.com/embed/3BKA9BcwL7M?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=3BKA9BcwL7M&amp;controls=0&amp;disablekb=1&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;enablejsapi=1&amp;cc_load_policy=1&amp;cc_lang_pref=en" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" title="Quilters who switched from other brands to Gammill - captions on, click sound to listen" loading="lazy"></iframe>
+        <button id="switchersSoundToggle" type="button" aria-label="Unmute video sound" style="position:absolute; bottom:14px; right:14px; z-index:2; display:flex; align-items:center; gap:6px; padding:8px 14px; background:rgba(0,0,0,0.62); color:#fff; border:0; border-radius:999px; font-family:Raleway, sans-serif; font-size:13px; font-weight:600; letter-spacing:0.02em; cursor:pointer; -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); transition:background 0.15s;">
+          <span class="vst-icon" aria-hidden="true" style="font-size:15px; line-height:1;">🔊</span>
+          <span class="vst-text">Sound</span>
+        </button>
+      </div>
+      <p data-reveal data-delay="2" style="font-size:0.88em; color:#6a6a6a; font-style:italic; margin:-0.6em 0 1.4em; text-align:center;">Quilters who switched to Gammill from other brands - in their own words.</p>
+
       <p data-reveal data-delay="2">And when you need help, you have <strong>three ways to reach a Gammill tech</strong>: phone, live chat, or a pick-a-time Zoom video meeting - staffed <strong>7 days a week, 12 hours a day</strong>. Zoom appointments typically book the same day with a real tech support rep. Not a ticket queue. Not a callback window. Same day.</p>
       <p data-reveal data-delay="3"><strong>And we service the whole system in your studio.</strong> When other longarm machines need work, owners often have to remove the head from its table and ship it back to a factory - which means the table, frame, and drive geometry never get diagnosed alongside the head. Repairs come back incomplete. Root causes that live in the relationship between the parts get missed. Gammill techs work on the whole system in place, where it lives, the way it's used.</p>
       <p data-reveal data-delay="3">This is the only service model in the longarm industry. It's the reason our limited lifetime warranty isn't a marketing line - it's a promise the people fulfilling it have a paycheck riding on.</p>
@@ -248,6 +258,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
+<!-- YouTube sound-toggle for the switchers testimonial video (postMessage to iframe; no API load needed) -->
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    var iframe = document.getElementById('switchersVideo');
+    var toggle = document.getElementById('switchersSoundToggle');
+    if (!iframe || !toggle) return;
+    var muted = true;
+    function send(cmd) {
+      try {
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: cmd, args: '' }), '*');
+      } catch (e) {}
+    }
+    toggle.addEventListener('click', function () {
+      muted = !muted;
+      send(muted ? 'mute' : 'unMute');
+      toggle.querySelector('.vst-icon').textContent = muted ? '🔊' : '🔇';
+      toggle.querySelector('.vst-text').textContent = muted ? 'Sound' : 'Mute';
+      toggle.setAttribute('aria-label', muted ? 'Unmute video sound' : 'Mute video sound');
+    });
+    toggle.addEventListener('mouseenter', function () { toggle.style.background = 'rgba(0,0,0,0.82)'; });
+    toggle.addEventListener('mouseleave', function () { toggle.style.background = 'rgba(0,0,0,0.62)'; });
+  });
+</script>
 <!-- Testimonial slider (inline so deploy = one fewer file) -->
 <script defer>
 (function () {
