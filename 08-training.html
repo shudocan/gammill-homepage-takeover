@@ -85,7 +85,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 data-reveal data-delay="1">Training that doesn't end at delivery.</h2>
 
       <div class="video-embed" data-reveal data-delay="1" style="position:relative; padding-top:56.25%; margin:1em 0 1.4em; border-radius:6px; overflow:hidden; background:#000; box-shadow:0 8px 24px rgba(0,0,0,0.12);">
-        <iframe src="https://player.vimeo.com/video/750411086?h=5fb0a5c938&amp;background=1&amp;dnt=1" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Why Choose Gammill Training - ambient background" loading="lazy"></iframe>
+        <iframe id="trainingVideo" src="https://player.vimeo.com/video/750411086?h=5fb0a5c938&amp;background=1&amp;texttrack=en&amp;dnt=1" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Why Choose Gammill Training - ambient background, click sound to listen" loading="lazy"></iframe>
+        <button id="trainingSoundToggle" type="button" aria-label="Unmute video sound" style="position:absolute; bottom:14px; right:14px; z-index:2; display:flex; align-items:center; gap:6px; padding:8px 14px; background:rgba(0,0,0,0.62); color:#fff; border:0; border-radius:999px; font-family:Raleway, sans-serif; font-size:13px; font-weight:600; letter-spacing:0.02em; cursor:pointer; -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); transition:background 0.15s, transform 0.15s;">
+          <span class="vst-icon" aria-hidden="true" style="font-size:15px; line-height:1;">🔊</span>
+          <span class="vst-text">Sound</span>
+        </button>
       </div>
 
       <p class="opener" data-reveal data-delay="2"><span class="dropcap">E</span>very new Gammill comes with the <strong>New Owner Training Program</strong> - a 24/7 online portal of <strong>short, focused video lessons (about 4 minutes each on average)</strong>, checklists, and walkthroughs you can work through at your own pace. Some learning happens <em>while you're waiting for the machine to arrive.</em> Other topics make more sense months later, when you want to attempt a new technique. It's like learning your machine in your pajamas - and you have access forever.</p>
@@ -127,6 +131,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
+<!-- Vimeo Player API + sound-toggle handler for the training video -->
+<script src="https://player.vimeo.com/api/player.js" defer></script>
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    var iframe = document.getElementById('trainingVideo');
+    var toggle = document.getElementById('trainingSoundToggle');
+    if (!iframe || !toggle || !window.Vimeo) return;
+    var player = new Vimeo.Player(iframe);
+    var muted = true; // background=1 starts muted
+    toggle.addEventListener('click', function () {
+      muted = !muted;
+      player.setMuted(muted).catch(function () {});
+      toggle.querySelector('.vst-icon').textContent = muted ? '🔊' : '🔇';
+      toggle.querySelector('.vst-text').textContent = muted ? 'Sound' : 'Mute';
+      toggle.setAttribute('aria-label', muted ? 'Unmute video sound' : 'Mute video sound');
+    });
+    toggle.addEventListener('mouseenter', function () { toggle.style.background = 'rgba(0,0,0,0.82)'; });
+    toggle.addEventListener('mouseleave', function () { toggle.style.background = 'rgba(0,0,0,0.62)'; });
+  });
+</script>
 <!-- HubSpot tracking -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20410581.js"></script>
 </body>
