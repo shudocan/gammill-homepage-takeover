@@ -146,6 +146,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p data-reveal data-delay="2">If quilting becomes your primary work and not just a side hustle: an established Statler longarmer finishes <strong>two to three queen-size edge-to-edge tops a day.</strong> At normal market rates that's <strong>$500-$600 per day, from a single machine.</strong> (An Ascend finishes 3-5 a day.)</p>
       <p data-reveal data-delay="2">Quilt shop owners who add a Statler report fabric sales <strong>2-3x</strong> afterwards - because customers who only came in to drop off a quilt top are walking past the fabric to get to the drop-off counter.</p>
 
+      <div class="video-embed" data-reveal data-delay="2" style="position:relative; padding-top:56.25%; margin:1.6em 0 1em; border-radius:6px; overflow:hidden; background:#000; box-shadow:0 8px 24px rgba(0,0,0,0.12);">
+        <iframe id="bizVideo" src="https://www.youtube.com/embed/w2u8Nng_h7U?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=w2u8Nng_h7U&amp;controls=0&amp;disablekb=1&amp;modestbranding=1&amp;rel=0&amp;playsinline=1&amp;enablejsapi=1&amp;cc_load_policy=1&amp;cc_lang_pref=en" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" title="Gammill business owners - in their own words, captions on, click sound to listen" loading="lazy"></iframe>
+        <button id="bizSoundToggle" type="button" aria-label="Unmute video sound" style="position:absolute; bottom:14px; right:14px; z-index:2; display:flex; align-items:center; gap:6px; padding:8px 14px; background:rgba(0,0,0,0.62); color:#fff; border:0; border-radius:999px; font-family:Raleway, sans-serif; font-size:13px; font-weight:600; letter-spacing:0.02em; cursor:pointer; -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); transition:background 0.15s;">
+          <span class="vst-icon" aria-hidden="true" style="font-size:15px; line-height:1;">🔊</span>
+          <span class="vst-text">Sound</span>
+        </button>
+      </div>
+      <p data-reveal data-delay="2" style="font-size:0.88em; color:#6a6a6a; font-style:italic; margin:-0.4em 0 1.6em; text-align:center;">Real Gammill business owners on what changed for them.</p>
+
       <div class="depr-section" data-reveal data-delay="3" style="margin: 2em 0 1.4em; padding: 1.5em 1.7em 1.4em; background: rgba(212, 165, 52, 0.07); border-left: 3px solid #d4a534; border-radius: 4px;">
         <h3 style="margin-top: 0;">The monthly payment is not the real cost.</h3>
         <p>Most longarm pitches obsess over the monthly payment. The <em>real</em> cost of any major purchase is <strong>depreciation</strong> - what you spent, minus what you got back when you sold it.</p>
@@ -372,6 +381,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
 <script src="bpb-modal.js" defer></script>
+<!-- YouTube sound-toggle for the business testimonial video (postMessage to iframe; no API load needed) -->
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    var iframe = document.getElementById('bizVideo');
+    var toggle = document.getElementById('bizSoundToggle');
+    if (!iframe || !toggle) return;
+    var muted = true;
+    function send(cmd) {
+      try { iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: cmd, args: '' }), '*'); } catch (e) {}
+    }
+    toggle.addEventListener('click', function () {
+      muted = !muted;
+      send(muted ? 'mute' : 'unMute');
+      toggle.querySelector('.vst-icon').textContent = muted ? '🔊' : '🔇';
+      toggle.querySelector('.vst-text').textContent = muted ? 'Sound' : 'Mute';
+      toggle.setAttribute('aria-label', muted ? 'Unmute video sound' : 'Mute video sound');
+    });
+    toggle.addEventListener('mouseenter', function () { toggle.style.background = 'rgba(0,0,0,0.82)'; });
+    toggle.addEventListener('mouseleave', function () { toggle.style.background = 'rgba(0,0,0,0.62)'; });
+  });
+</script>
 <!-- Suppress HubSpot Conversations chat widget on tour pages (must run before the HubSpot loader) -->
 <script>window.hsConversationsSettings = { loadImmediately: false };</script>
 <!-- HubSpot tracking -->
