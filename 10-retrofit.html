@@ -85,11 +85,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="opener" data-reveal data-delay="2"><span class="dropcap">A</span> retrofit takes any Gammill from any era and modernizes it. We reuse the parts engineered to last forever - the cast-aluminum machine head and the welded tube-steel table - and replace everything that ages: motors, electronics, controls, wiring, software. The result is essentially a brand-new machine, on the bones of the one you already love.</p>
       <p data-reveal data-delay="2">There are three retrofit tiers, one per current model:</p>
       <ul data-reveal data-delay="3">
-        <li><strong>Vision 2 Retrofit</strong> - $9,999 - modernizes a hand-guided Gammill to current Vision 2.0 specification</li>
-        <li><strong>Statler Retrofit</strong> - $26,999 - adds full Statler computerization to a hand-guided or older Gammill machine</li>
-        <li><strong>Statler Ascend Retrofit</strong> - $33,999 - upgrades to the fastest and most precise current model</li>
+        <li><strong>Vision 2 Retrofit</strong> - modernize your existing Gammill to current Vision 2.0 features. <button type="button" class="retrofit-trigger" data-model="vision2" style="background:none; border:0; padding:0; color:#d4a534; text-decoration:underline; cursor:pointer; font:inherit;">See features →</button></li>
+        <li><strong>Statler Retrofit</strong> - modernize your existing Gammill with full Statler abilities. Nothing it can't do. <button type="button" class="retrofit-trigger" data-model="statler" style="background:none; border:0; padding:0; color:#d4a534; text-decoration:underline; cursor:pointer; font:inherit;">See features →</button></li>
+        <li><strong>Statler Ascend Retrofit</strong> - Modernize your existing Gammill with Statler Ascend, our fastest and most precise system. <button type="button" class="retrofit-trigger" data-model="ascend" style="background:none; border:0; padding:0; color:#d4a534; text-decoration:underline; cursor:pointer; font:inherit;">See features →</button></li>
       </ul>
-      <p data-reveal data-delay="3">Every retrofit includes delivery, installation, and new-owner training on the modernized machine. The retrofit pricing is dramatically less than buying a new machine, and the result is the same: a current-spec Gammill in your studio.</p>
+      <p data-reveal data-delay="3">Every retrofit includes delivery, installation, and new-owner training on the modernized machine. The retrofit pricing is significantly less than buying a new machine, and the result is the same: a current model Gammill in your studio.</p>
       <p data-reveal data-delay="3"><strong>No other longarm manufacturer offers retrofitting.</strong> None. When a competitor's machine gets old, the owner's only option is to scrap it and start over. That's why most longarm brands have a much shorter useful life - and why a thirty-year-old Gammill is still earning its keep in someone's studio today.</p>
     </div>
     <aside class="aside" data-reveal data-delay="2">
@@ -118,6 +118,121 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div>© 2026 Gammill, Inc. · Built in West Plains, Missouri</div>
 </footer>
+
+<!-- Retrofit feature modal (reuses .bp-* classes; content swaps based on trigger's data-model) -->
+<div class="bp-overlay" id="retrofitOverlay"></div>
+<div class="bp-modal" id="retrofitModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="retrofitTitle">
+  <div class="bp-dialog">
+    <div class="bp-header">
+      <h3 class="bp-title" id="retrofitTitle">Retrofit Features</h3>
+      <button class="bp-close" id="retrofitCloseBtn" aria-label="Close">✕</button>
+    </div>
+    <div class="bp-body is-ready" id="retrofitBody" style="font-family: 'Open Sans', system-ui, -apple-system, sans-serif; color: #1f2937; line-height: 1.6;">
+      <!-- Content injected by JS based on which trigger was clicked -->
+    </div>
+  </div>
+</div>
+
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    var modal = document.getElementById('retrofitModal');
+    var overlay = document.getElementById('retrofitOverlay');
+    var closeBtn = document.getElementById('retrofitCloseBtn');
+    var title = document.getElementById('retrofitTitle');
+    var body = document.getElementById('retrofitBody');
+    var triggers = document.querySelectorAll('.retrofit-trigger');
+    if (!modal || !triggers.length) return;
+
+    // Feature lists per model. Edit copy here to update modals.
+    var content = {
+      vision2: {
+        title: 'Vision 2 Retrofit - Features',
+        lede: 'A current-model Vision 2.0 system installed on your existing Gammill head and table. Hand-guided.',
+        features: [
+          'Tablet-driven, touchscreen control mounted on the machine head',
+          '<strong>Intermittent Tension</strong> + <strong>Automatic Thread Escapement</strong> - Gammill\'s signature tension system, no afternoon loops',
+          '<strong>M-class large-capacity bobbin</strong> - about 2× standard capacity, fewer thread changes',
+          'Four stitch modes: Stitch Regulate, Coast, Constant Speed, Baste',
+          'Front and rear handles with controls',
+          'Electronic channel locks',
+          'Laser stylus + LED light fixture (with black light)',
+          'TOWA bobbin gauge',
+          'All current Vision 2 motors, electronics, controls, wiring',
+          '3-year electrical parts warranty (lifetime mechanical)',
+          'Delivery, installation, and new-owner training included'
+        ]
+      },
+      statler: {
+        title: 'Statler Retrofit - Features',
+        lede: 'Full Statler computerization installed on your existing Gammill head and table. Nothing it can\'t do.',
+        features: [
+          'Everything in the Vision 2 Retrofit, plus:',
+          '<strong>Full Statler computerization</strong> - hands-off, computer-driven quilting',
+          '<strong>CreativeStudio software</strong> - the deepest pattern-management system in longarm. Free upgrades for life.',
+          '<strong>PatternCloud access</strong> - 20,000+ patterns, growing weekly. 1,200+ included.',
+          'Pattern preview, auto-restart at exact position, auto-calculate rows/repeats',
+          'Stand-Alone CreativeStudio - design on your laptop while the machine quilts',
+          'Touchscreen at the machine for direct control',
+          '3-year electrical parts warranty (lifetime mechanical), commercial use covered',
+          'Delivery, installation, and new-owner training on the modernized machine'
+        ]
+      },
+      ascend: {
+        title: 'Statler Ascend Retrofit - Features',
+        lede: 'The fastest and most precise Gammill, installed on your existing head and table.',
+        features: [
+          'Everything in the Statler Retrofit, plus:',
+          '<strong>Higher stitching speed</strong> without sacrificing accuracy',
+          '<strong>360° channel lock</strong> - exclusive to the Ascend',
+          'Most precise stitching of any Gammill model',
+          'Designed for high-throughput business quilting',
+          'Same CreativeStudio + PatternCloud library, faster turnaround per quilt',
+          '3-year electrical parts warranty (lifetime mechanical), commercial use covered',
+          'Delivery, installation, and new-owner training on the modernized machine'
+        ]
+      }
+    };
+
+    function renderModel(key) {
+      var data = content[key];
+      if (!data) return;
+      title.textContent = data.title;
+      var html = '<p style="margin: 0 0 1.2em; font-size: 1.02em; color: #111827; font-weight: 500;">' + data.lede + '</p>';
+      html += '<ul style="margin: 0; padding-left: 1.25em; line-height: 1.7;">';
+      data.features.forEach(function (f) {
+        html += '<li style="margin-bottom: 0.45em;">' + f + '</li>';
+      });
+      html += '</ul>';
+      body.innerHTML = html;
+    }
+
+    function openModal(modelKey) {
+      renderModel(modelKey);
+      document.body.classList.add('bp-lock');
+      modal.classList.add('is-open');
+      overlay.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+    function closeModal() {
+      document.body.classList.remove('bp-lock');
+      modal.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    triggers.forEach(function (t) {
+      t.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal(t.dataset.model);
+      });
+    });
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  });
+</script>
 
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
