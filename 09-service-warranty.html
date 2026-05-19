@@ -99,7 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li>Trained, certified, and paid by Gammill - not a third party</li>
         <li><strong>Phone, live chat, or same-day Zoom video</strong> - direct to a Gammill tech, 7 days a week, 12 hours a day</li>
         <li><strong>Owner-maintainable.</strong> Wearable parts come with online walkthroughs - you can replace them yourself without a tech visit</li>
-        <li><strong>Limited lifetime warranty on every new machine</strong></li>
+        <li><strong>Limited lifetime warranty on every new machine.</strong> Your warranty doesn't change just because you run a business. Customer quilting is covered exactly the same as personal use. <button type="button" class="warranty-trigger" style="background:none; border:0; padding:0; color:#d4a534; text-decoration:underline; cursor:pointer; font:inherit;">Read the full warranty</button></li>
         <li><strong>Every part is replaceable.</strong> When the time comes, a Gammill retrofit brings any older machine back to current-model spec</li>
       </ul>
 
@@ -136,6 +136,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div>© 2026 Gammill, Inc. · Built in West Plains, Missouri</div>
 </footer>
+
+<!-- Warranty modal (reuses .bp-* classes for visual consistency with the Business Plan Builder modal) -->
+<div class="bp-overlay" id="warrantyOverlay"></div>
+<div class="bp-modal" id="warrantyModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="warrantyTitle">
+  <div class="bp-dialog">
+    <div class="bp-header">
+      <h3 class="bp-title" id="warrantyTitle">Gammill Limited Lifetime Warranty</h3>
+      <button class="bp-close" id="warrantyCloseBtn" aria-label="Close">✕</button>
+    </div>
+    <div class="bp-body is-ready" id="warrantyBody" style="padding:0;">
+      <iframe id="warrantyFrame" src="about:blank" data-src="https://gammill.com/warranty/" style="width:100%; height:100%; border:0; display:block;" title="Gammill Limited Lifetime Warranty" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    var modal = document.getElementById('warrantyModal');
+    var overlay = document.getElementById('warrantyOverlay');
+    var closeBtn = document.getElementById('warrantyCloseBtn');
+    var iframe = document.getElementById('warrantyFrame');
+    var triggers = document.querySelectorAll('.warranty-trigger');
+    if (!modal || !overlay || !triggers.length) return;
+    var loaded = false;
+    function openModal() {
+      if (!loaded) { iframe.src = iframe.dataset.src; loaded = true; }
+      document.body.classList.add('bp-lock');
+      modal.classList.add('is-open');
+      overlay.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+    function closeModal() {
+      document.body.classList.remove('bp-lock');
+      modal.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+    triggers.forEach(function (t) {
+      t.addEventListener('click', function (e) { e.preventDefault(); openModal(); });
+    });
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  });
+</script>
 
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
