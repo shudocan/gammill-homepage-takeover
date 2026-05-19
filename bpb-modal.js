@@ -88,6 +88,86 @@
         inp.addEventListener('wheel', function (e) { e.preventDefault(); }, { passive: false });
       });
     }
+
+    // ---------- Intercept HubSpot redirect, show inline thank-you ----------
+    // HubSpot V2 embed posts a 'hsFormCallback' message after submission.
+    // We listen, swap the modal body with our own thank-you, and block the
+    // redirect via multiple methods (override location.assign/replace +
+    // beforeunload guard). The redirect URL is preserved as a clickable
+    // 'continue to longarmquiltingbusiness.com' link the user can choose.
+    window.addEventListener('message', function (e) {
+      if (!e.data || e.data.type !== 'hsFormCallback') return;
+      if (e.data.eventName !== 'onFormSubmitted') return;
+
+      // Find which modal body owns the form that submitted, if multiple.
+      // For BPB we know it's #bpBody.
+      var redirectUrl = (e.data.data && e.data.data.redirectUrl) || null;
+
+      // 1. Replace the modal body with our thank-you state.
+      var continueLink = '';
+      if (redirectUrl) {
+        continueLink =
+          '<p style="margin:1.4em 0 0;">' +
+          '<a href="' + encodeURI(redirectUrl) + '" target="_blank" rel="noopener" ' +
+          'style="display:inline-block; padding:0.7em 1.2em; background:#FAAD3D; color:#111; ' +
+          'text-decoration:none; border-radius:999px; font-family:Raleway, sans-serif; ' +
+          'font-weight:600; font-size:0.95em;">Continue to the long-form Quilting Business playbook →</a>' +
+          '</p>';
+      }
+      bodyEl.innerHTML =
+        '<div style="padding:1.6em 0.4em; text-align:center; font-family:\'Open Sans\', system-ui, sans-serif;">' +
+        '<div style="font-size:2.8em; line-height:1; margin-bottom:0.3em;">📬</div>' +
+        '<h3 style="font-family:Raleway, sans-serif; font-size:1.45rem; font-weight:700; margin:0 0 0.6em; color:#111;">Your business plan is on its way.</h3>' +
+        '<p style="margin:0 auto; max-width:480px; color:#333; line-height:1.6;">' +
+        'Check your inbox in the next 30 minutes. The plan is tailored to your local market, ' +
+        'the machine you picked, and how many hours per week you\'re willing to work - ' +
+        'including projected payback dates.</p>' +
+        continueLink +
+        '</div>';
+
+      // 2. Block the HubSpot redirect for ~6 seconds so the user can read.
+      //    HubSpot V2 typically calls window.location.assign(redirectUrl) after this event.
+      var blockUntil = Date.now() + 6000;
+      var origAssign = window.location.assign.bind(window.location);
+      var origReplace = window.location.replace.bind(window.location);
+      try {
+        window.location.assign = function (url) {
+          if (Date.now() < blockUntil) {
+            console.log('[bpb-modal] blocked redirect.assign →', url);
+            return;
+          }
+          return origAssign(url);
+        };
+        window.location.replace = function (url) {
+          if (Date.now() < blockUntil) {
+            console.log('[bpb-modal] blocked redirect.replace →', url);
+            return;
+          }
+          return origReplace(url);
+        };
+      } catch (err) {
+        // location methods are not always assignable in all browsers
+        console.log('[bpb-modal] could not override location methods:', err);
+      }
+
+      // 3. beforeunload fallback - blocks programmatic top-level navigation,
+      //    may show a browser dialog in some cases; auto-removes after the block window.
+      var beforeUnload = function (ev) {
+        ev.preventDefault();
+        ev.returnValue = '';
+        return '';
+      };
+      window.addEventListener('beforeunload', beforeUnload);
+
+      // 4. Restore native behavior after the block window expires.
+      setTimeout(function () {
+        try {
+          window.location.assign = origAssign;
+          window.location.replace = origReplace;
+        } catch (err) {}
+        window.removeEventListener('beforeunload', beforeUnload);
+      }, 6500);
+    }, false);
   }
 
   if (document.readyState === 'loading') {
