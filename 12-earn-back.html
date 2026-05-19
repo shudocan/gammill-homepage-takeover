@@ -82,7 +82,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="copy">
       <div class="kicker" data-reveal>The numbers, for the curious</div>
       <h2 data-reveal data-delay="1">If quilting becomes more than a hobby, here's what it can do.</h2>
-      <p class="opener" data-reveal data-delay="2"><span class="dropcap">A</span> computerized Gammill at part-time pace - 20 hours a week, one quilt a day at a $150 average ticket - generates roughly <strong>$3,000/mo in revenue.</strong> Subtract financing (~$1,100/mo on the Affordable Financing Program) and the basics (power, insurance, maintenance, ~$150/mo), and the machine pays itself off while putting <strong>about $1,750/mo in your pocket.</strong> Once the loan is gone, that's $2,850/mo - on 20 hours a week.</p>
+      <p class="opener" data-reveal data-delay="2"><span class="dropcap">A</span> computerized Gammill at part-time pace - 20 hours a week, one quilt a day at a $150 average ticket - generates roughly <strong>$3,000/mo in revenue.</strong> Here's where that goes:</p>
+
+      <style>
+        .cashflow-viz { margin: 1.4em 0 1.6em; padding: 1.4em 1.4em 1em; background: rgba(0,0,0,0.025); border-radius: 6px; }
+        .cf-row { margin-bottom: 1em; }
+        .cf-row:last-of-type { margin-bottom: 0.4em; }
+        .cf-label { font-family: Raleway, sans-serif; font-size: 0.78em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #4b5563; margin-bottom: 0.45em; }
+        .cf-bar { display: flex; height: 72px; border-radius: 4px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .cf-seg { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 6px 8px; color: #fff; font-family: Raleway, sans-serif; text-align: center; overflow: hidden; min-width: 0; }
+        .cf-amount { font-size: 1.02em; font-weight: 700; line-height: 1; white-space: nowrap; }
+        .cf-tag { font-size: 0.7em; opacity: 0.92; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 5px; line-height: 1.1; }
+        .cf-seg.financing { background: #b04a2a; }
+        .cf-seg.expenses { background: #6b7280; }
+        .cf-seg.pocket { background: #d4a534; color: #1a1a1a; }
+        .cf-foot { margin: 0.7em 0 0; font-size: 0.83em; color: #6b7280; font-style: italic; font-family: 'Open Sans', sans-serif; }
+        @media (max-width: 640px) {
+          .cf-bar { height: 78px; }
+          .cf-amount { font-size: 0.9em; }
+          .cf-tag { font-size: 0.62em; }
+          .cf-seg { padding: 4px 5px; }
+        }
+      </style>
+      <div class="cashflow-viz" data-reveal data-delay="2" role="img" aria-label="Monthly cashflow breakdown: while paying the loan, $1,100 goes to financing, $150 to expenses, $1,750 in your pocket. After the loan, $150 to expenses, $2,850 in your pocket.">
+        <div class="cf-row">
+          <div class="cf-label">While paying off the machine</div>
+          <div class="cf-bar">
+            <div class="cf-seg financing" style="flex: 1100;">
+              <div class="cf-amount">$1,100</div>
+              <div class="cf-tag">Loan</div>
+            </div>
+            <div class="cf-seg expenses" style="flex: 150;">
+              <div class="cf-amount">$150</div>
+              <div class="cf-tag">Expenses</div>
+            </div>
+            <div class="cf-seg pocket" style="flex: 1750;">
+              <div class="cf-amount">$1,750/mo</div>
+              <div class="cf-tag">In your pocket</div>
+            </div>
+          </div>
+        </div>
+        <div class="cf-row">
+          <div class="cf-label">After the machine is paid off</div>
+          <div class="cf-bar">
+            <div class="cf-seg expenses" style="flex: 150;">
+              <div class="cf-amount">$150</div>
+              <div class="cf-tag">Expenses</div>
+            </div>
+            <div class="cf-seg pocket" style="flex: 2850;">
+              <div class="cf-amount">$2,850/mo</div>
+              <div class="cf-tag">In your pocket</div>
+            </div>
+          </div>
+        </div>
+        <p class="cf-foot">Illustrative numbers at 20 hr/week. <strong>Run your own scenario in the Business Plan Tool</strong> - it'll calculate your payback date based on your local market.</p>
+      </div>
       <p data-reveal data-delay="2">If quilting becomes the work and not the side hustle: an established computerized longarmer finishes <strong>two to three queen-size edge-to-edge tops a day.</strong> At normal market rates that's <strong>$500-$600 per day, single machine.</strong> Quilt shop owners who add a longarm report fabric sales <strong>2-3x</strong> after - because customers who drop off tops walk through the fabric to do it.</p>
 
       <h3 data-reveal data-delay="3" style="margin-top:1.8em;">The monthly payment is not the real cost.</h3>
