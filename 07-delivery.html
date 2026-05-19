@@ -82,17 +82,12 @@
         <li>Included in the price for the lower 48 (extra charge outside Continental US)</li>
       </ul>
 
-      <!-- Wire `action` to the real HubSpot form endpoint when ready. Submit should stay on-page (HubSpot forms.js / AJAX + thank-you toast) so the reader doesn't leave the tour. -->
       <div class="sizing-guide-form" data-reveal data-delay="3" style="margin:2.2em 0 0; padding:1.5em 1.7em; background:rgba(212,165,52,0.08); border-left:3px solid #d4a534; border-radius:4px;">
         <div style="font-family:Raleway, sans-serif; font-size:1.08em; font-weight:600; margin-bottom:0.4em; letter-spacing:0.01em;">Wondering if your space will fit a Gammill?</div>
-        <p style="margin:0 0 1em; font-size:0.93em; opacity:0.88;">Our free <strong>Gammill Sizing Guide</strong> covers floor footprints for every table size, ceiling clearance, electrical requirements, and aisle space. Drop your name and email - we'll send it. You stay right here.</p>
-        <form action="https://gammill.com/api/sizing-guide/send" method="post" style="display:flex; gap:0.6em; flex-wrap:wrap; align-items:stretch;">
-          <label for="sg-name" style="position:absolute; left:-9999px;">Your name</label>
-          <input id="sg-name" name="name" type="text" required placeholder="your name" autocomplete="name" style="flex:1 1 160px; min-width:140px; padding:0.75em 0.95em; border:1px solid rgba(0,0,0,0.22); border-radius:4px; font-size:1em; font-family:inherit; background:#fff; color:#111;">
-          <label for="sg-email" style="position:absolute; left:-9999px;">Email address</label>
-          <input id="sg-email" name="email" type="email" required placeholder="email address" autocomplete="email" inputmode="email" style="flex:1 1 220px; min-width:180px; padding:0.75em 0.95em; border:1px solid rgba(0,0,0,0.22); border-radius:4px; font-size:1em; font-family:inherit; background:#fff; color:#111;">
-          <button type="submit" style="padding:0.75em 1.4em; background:#d4a534; color:#fff; border:0; border-radius:4px; font-weight:600; font-size:1em; cursor:pointer; font-family:inherit; white-space:nowrap;">Send the Sizing Guide</button>
-        </form>
+        <p style="margin:0 0 1em; font-size:0.93em; opacity:0.88;">Our free <strong>Gammill Sizing Guide</strong> covers floor footprints for every table size, ceiling clearance, electrical requirements, and aisle space. Drop your details - we'll send it. You stay right here.</p>
+        <!-- HubSpot Sizing Guide form (developer embed) -->
+        <script src="https://js.hsforms.net/forms/embed/developer/20410581.js" defer></script>
+        <div class="hs-form-html" data-region="na1" data-form-id="7960c32d-69e9-4d55-81a6-c348b6a219e9" data-portal-id="20410581"></div>
         <p style="margin:0.8em 0 0; font-size:11px; line-height:1.45; color:#6a6a6a;">By submitting a telephone number, you are consenting to be contacted by text message and agreeing to our <a href="https://gammill.com/privacy-policy/" style="color:inherit; text-decoration:underline;">Privacy Policy</a>. Message frequency may vary. Message and data rates may apply.</p>
       </div>
     </div>
