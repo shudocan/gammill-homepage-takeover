@@ -33,6 +33,8 @@ These have come up but aren't being worked on yet. Pulled here so they don't dri
 
 - **One "video" testimonial card still needs a real YouTube ID.** Ch 11 (Althea Smith). Currently styled as a video card with a visible play button but no `data-video` attribute - click does nothing. Andrew sources the video, I wire it with the same `data-video="ID"` pattern as Ch 3 (`bs0XZV5U_D4`). (Ch 1's Janet-Lee card retired for the oil-line Ken Burns crossfade, 2026-05-20. Ch 4's Mary-Kay card retired for a 3-card editorial pullquote stack — Thomas Swanson, Mary-Kay Colman, Marie Kelley — same day.)
 
+- **Source PatternCloud-specific testimonials for Ch 6.** Corpus search 2026-05-20 surfaced zero permission=yes quotes that praise PatternCloud, the pattern library, or pattern browsing/search/purchase. Ch 6 currently ships stats-only (the 20,358 / 1,200+ / Weekly column). When real owner voice exists for this beat — likely via direct outreach to active PatternCloud users or a designer-network ask — convert the stats aside to a slider matching Ch 4/Ch 5 (or add a small pullquote below the stats).
+
 - **Avatar-named path choice ("See why Sue chose Gammill" / "See why Stan chose Gammill").** Replacement framing for the planned mind-vs-heart choice screen. Details in `../why-gammill-storybrand/README.md` under "Planned design revision: avatar-named paths." Both avatars need photographs and 1-line bios before the choice screen ships.
 
 - **Photo refresh.** Several chapters share hero photos (Ch 5 / Ch 6 / Ch 12 all use `step5-a.jpg`; Ch 1 / Ch 10 share `step3-c.jpg`). QWC event photos are sitting in `assets/` root waiting to be web-sized for Ch 11 Community. Ch 6 PatternCloud needs a screenshot of the cloud library on the machine touchscreen.
