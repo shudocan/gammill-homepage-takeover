@@ -96,10 +96,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
     </div>
     <aside class="aside" data-reveal data-delay="2">
-      <div class="pullquote-editorial">
-        <span class="quote-glyph">"</span>
-        <p class="quote-body">I know hands-down, CreativeStudio 7 is the best. The function and control over the quilting I provide for my clients is top notch - it sometimes still causes me to think, "dang, I surprised even myself with how good that quilting looks."</p>
-        <p class="quote-cite"><strong>Shelly Moore</strong> &nbsp;·&nbsp; Quilt Stitching by Shelly &nbsp;·&nbsp; Statler owner since 2017</p>
+      <div class="testimonial-slider" id="ch5Slider" data-interval="11000" aria-roledescription="carousel" aria-label="Owner testimonials about CreativeStudio learnability and first-day success">
+        <div class="ts-track">
+          <div class="ts-card is-active" role="group" aria-roledescription="slide" aria-label="1 of 4">
+            <div class="pullquote-editorial">
+              <span class="quote-glyph">"</span>
+              <p class="quote-body">I bought a pre loved Gammill Statler, everyone from Jenna in sales to Karl in service are awesome! Just a few hours after Karl left I had my first quilt quilted! 10 out of 10 I highly recommend!</p>
+              <p class="quote-cite"><strong>Brenda Matthews</strong> &nbsp;·&nbsp; pre-loved Statler owner</p>
+            </div>
+          </div>
+          <div class="ts-card" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
+            <div class="pullquote-editorial">
+              <span class="quote-glyph">"</span>
+              <p class="quote-body">I was a little scared about the learning curve but have found my machine extremely easy to use. ... This has made quilting a joy, it is exciting to work on each quilt with EASE. ... It's magical.</p>
+              <p class="quote-cite"><strong>Marnie Bryce</strong> &nbsp;·&nbsp; Vision 2.0 owner</p>
+            </div>
+          </div>
+          <div class="ts-card" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
+            <div class="pullquote-editorial">
+              <span class="quote-glyph">"</span>
+              <p class="quote-body">I am so pleased with the installation of my Gammill Statler Stitcher. Dylan was friendly, patient and very professional. He made sure everything was set up correctly and explained how the system works in an easy-to-understand way and did not leave until I was comfortable using it. Wonderful service from start to finish! I've been dreaming of owning a Gammill for three years. Thank you, Gammill, Inc. for making my dream a reality!</p>
+              <p class="quote-cite"><strong>Rayla Jones</strong> &nbsp;·&nbsp; Statler Stitcher owner</p>
+            </div>
+          </div>
+          <div class="ts-card" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
+            <div class="pullquote-editorial">
+              <span class="quote-glyph">"</span>
+              <p class="quote-body">I recently had the pleasure of spending a day and a half with Dylan Anderson, who installed my pre-loved Gammill 26" Statler. The training provided was exceptional. Dylan was incredibly patient, knowledgeable, and very friendly, offering a lot of helpful tips. He guided me through every step of the process of learning about my new machine. The training included things such as loading the quilt, how to use Creative Studio, completing edge to edge, and machine maintenance, just to name a few. I have to also mention that sales (Holly) and customer service (Melissa) were also outstanding. They were great about working with me on some financing issues that were entirely on me when they didn't have to. I really appreciate that they treated me with kindness every step of the way. They have always been very helpful every time I have had to call them. They also always returned my calls promptly. This entire experience with Gammill has exceeded my expectations, from the purchasing process to the installation and training. Thank you, Gammill, for going above and beyond!</p>
+              <p class="quote-cite"><strong>Brandy</strong> &nbsp;·&nbsp; pre-loved 26" Statler owner</p>
+            </div>
+          </div>
+        </div>
+        <div class="ts-dots" role="tablist" aria-label="Choose testimonial">
+          <button type="button" class="ts-dot is-active" data-target="0" role="tab" aria-selected="true" aria-label="Show testimonial 1"></button>
+          <button type="button" class="ts-dot" data-target="1" role="tab" aria-selected="false" aria-label="Show testimonial 2"></button>
+          <button type="button" class="ts-dot" data-target="2" role="tab" aria-selected="false" aria-label="Show testimonial 3"></button>
+          <button type="button" class="ts-dot" data-target="3" role="tab" aria-selected="false" aria-label="Show testimonial 4"></button>
+        </div>
       </div>
     </aside>
   </div>
@@ -125,6 +158,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
+<!-- Testimonial slider (inline so deploy = one fewer file) -->
+<script defer>
+(function () {
+  function initSlider(root) {
+    var cards = root.querySelectorAll('.ts-card');
+    var dots = root.querySelectorAll('.ts-dot');
+    if (!cards.length || !dots.length) return;
+    var interval = parseInt(root.getAttribute('data-interval'), 10) || 9000;
+    var current = 0, timer = null, paused = false;
+    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function show(idx) {
+      idx = ((idx % cards.length) + cards.length) % cards.length;
+      cards.forEach(function (c, i) {
+        var active = i === idx;
+        c.classList.toggle('is-active', active);
+        c.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+      dots.forEach(function (d, i) {
+        var active = i === idx;
+        d.classList.toggle('is-active', active);
+        d.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      current = idx;
+    }
+    function next() { show(current + 1); }
+    function start() { if (reducedMotion || paused || timer) return; timer = setInterval(next, interval); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); start(); }
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function () { show(i); restart(); });
+    });
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1); restart(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1); restart(); }
+    });
+    root.addEventListener('mouseenter', function () { paused = true; stop(); });
+    root.addEventListener('mouseleave', function () { paused = false; start(); });
+    root.addEventListener('focusin', function () { paused = true; stop(); });
+    root.addEventListener('focusout', function () {
+      if (!root.contains(document.activeElement)) { paused = false; start(); }
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else if (!paused) start();
+    });
+    start();
+  }
+  function init() { document.querySelectorAll('.testimonial-slider').forEach(initSlider); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 <!-- Suppress HubSpot Conversations chat widget on tour pages (must run before the HubSpot loader) -->
 <script>window.hsConversationsSettings = { loadImmediately: false };</script>
 <!-- HubSpot tracking -->
