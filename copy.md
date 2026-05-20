@@ -220,7 +220,7 @@ LEDE (italic serif)  [[s01.lede]]
 A Gammill is designed for a shockingly long life. **The Gammill machine you order today will bring joy to many generations of Quilters.**
 
 LEDE SUBTEXT (small, muted, sits under the lede)  [[s01.lede.subtext]]
-All Gammill machines since 1997 are functioning today unless they were lost to fire, flood, or other external disaster, or unless one is waiting to be retrofitted.
+All Gammill machines since 1995 are functioning today unless they were lost to fire, flood, or other external disaster, or unless one is waiting to be retrofitted.
 
 BODY KICKER (small label)  [[s01.body.kicker]]
 How we make that promise
@@ -235,10 +235,10 @@ BODY · PARAGRAPH 2  [[s01.body.p2]]
 What **does** wear out over decades is everything electrical. Electrical includes motors, electronics, controls, and wiring. So what should your grandchildren do, when the machine they inherited has crusty old wires? **Only Gammill machines have Retrofits available.** A retrofit takes a Gammill *of any era* and installs a new electrical system to bring that older machine current: we reuse the machine and table (because they are essentially eternal), and replace the rest with the complete electrical and electronic system of any current model.
 
 BODY · PARAGRAPH 3  [[s01.body.p3]]
-**Every Gammill built since 1997 is still in service today.** This is possible because of retrofitting. No other longarm manufacturer offers retrofitting. When other brands of longarm machines get old, they get thrown away - but not Gammill. It's also why pre-owned Gammills hold the highest resale value in the longarm industry.
+**Every Gammill built since 1995 is still in service today.** This is possible because of retrofitting. No other longarm manufacturer offers retrofitting. When other brands of longarm machines get old, they get thrown away - but not Gammill. It's also why pre-owned Gammills hold the highest resale value in the longarm industry.
 
 STAT 1 · NUMBER  [[s01.stat.1.num]]
-1997
+1995
 
 STAT 1 · LABEL  [[s01.stat.1.lbl]]
 Every machine since, still in service

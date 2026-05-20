@@ -36,7 +36,7 @@ Why: Concrete dates (1998 → retrofit → Ascend), exact words capture the chap
 
 **Second pick (long-form):** **Russ Lee** *(Tab C)*
 > *"While owned by 3 different people, there are 3 different machines in the shop. A 1991 Gammill Minus on a 14 foot table, a 2001 Classic Plus upgraded to Statler on a 12 foot table and a 2021 Statler on a 14 foot table. All run like champs."*
-Why: A single owner with **three** Gammills spanning 1991–2021. *That* is the "every Gammill since 1997" claim made flesh.
+Why: A single owner with **three** Gammills spanning 1991–2021. *That* is the "every Gammill since 1995" claim made flesh.
 
 **Third pick (long-form):** **Vila Rae Kassing** *(Tab C)*
 > *"Envy is a bitter emotion. Ask them if they have spent time on the Gammill. ... will their machine be stitching in 30 years? I know my Statler will be stitching in 60 years baring catastrophe like fire."*

@@ -11,7 +11,7 @@ Things deliberately deferred. Not bugs - intentional "later" items.
 - Reader picks a use profile (hobbyist 5 hr/week, prosumer 15 hr/week, business 30+ hr/week) and a machine.
 - A 20-year horizontal timeline animates with dots: green = quilting, amber = routine maintenance (every 5 yr / 500 quilts), red dots only for unscheduled service events.
 - For a typical Gammill, the reader sees mostly green with a couple of amber dots over two decades. The point lands viscerally: **almost nothing happens.**
-- Reinforces Ch 1's "still quilting since 1997" claim by making 20 years of ownership concrete.
+- Reinforces Ch 1's "still quilting since 1995" claim by making 20 years of ownership concrete.
 
 **Fallback shape if (A) is too much:** a 100-hex reliability grid where each hex is an owner, color-coded by service-call count over a defined window. Less interactive but extremely glanceable.
 
