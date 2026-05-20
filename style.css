@@ -1459,3 +1459,78 @@ body.bp-lock {
 }
 .bp-body .hs-form-field { margin-bottom: 14px !important; }
 .bp-body input { font-variant-numeric: tabular-nums; }
+
+/* ============================================================
+   Ken Burns crossfade stack (oil-line montage, Ch 1)
+   3 slides on a 24s cycle, 8s per slide, slow pan+zoom
+   ============================================================ */
+.kenburns-stack {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #1a1a1a;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.kb-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation-duration: 24s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.kb-slide.kb1 {
+  background-image: url('assets/web/oil-lines-1.jpg');
+  animation-name: kb-slide-1;
+  animation-delay: 0s;
+}
+.kb-slide.kb2 {
+  background-image: url('assets/web/oil-lines-2.jpg');
+  background-position: center 35%;
+  animation-name: kb-slide-2;
+  animation-delay: 8s;
+}
+.kb-slide.kb3 {
+  background-image: url('assets/web/oil-lines-3.jpg');
+  background-position: center 40%;
+  animation-name: kb-slide-3;
+  animation-delay: 16s;
+}
+@keyframes kb-slide-1 {
+  0%   { opacity: 0; transform: scale(1.0) translate(0, 0); }
+  4%   { opacity: 1; }
+  29%  { opacity: 1; }
+  37%  { opacity: 0; transform: scale(1.12) translate(-1.5%, -1%); }
+  100% { opacity: 0; transform: scale(1.0) translate(0, 0); }
+}
+@keyframes kb-slide-2 {
+  0%   { opacity: 0; transform: scale(1.10) translate(0, 1.5%); }
+  4%   { opacity: 1; }
+  29%  { opacity: 1; }
+  37%  { opacity: 0; transform: scale(1.0) translate(0, -1.5%); }
+  100% { opacity: 0; transform: scale(1.10) translate(0, 1.5%); }
+}
+@keyframes kb-slide-3 {
+  0%   { opacity: 0; transform: scale(1.0) translate(0, 0); }
+  4%   { opacity: 1; }
+  29%  { opacity: 1; }
+  37%  { opacity: 0; transform: scale(1.18) translate(1.5%, -2%); }
+  100% { opacity: 0; transform: scale(1.0) translate(0, 0); }
+}
+.kenburns-caption {
+  margin: 0.7em 0 0;
+  font-size: 0.86em;
+  color: #6a6a6a;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  text-align: center;
+}
+.kenburns-caption strong { color: #1a1a1a; font-style: normal; }
+@media (prefers-reduced-motion: reduce) {
+  .kb-slide { transform: none !important; animation-timing-function: ease-in-out; }
+}
