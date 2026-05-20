@@ -1346,6 +1346,13 @@ a.nav-pill-link:hover {
   .testimonial-slider { min-height: 480px; }
   .ts-track { min-height: 430px; }
 }
+/* Compact variant — for sliders with shorter quote sets (e.g. Ch 5) */
+.testimonial-slider.is-compact { min-height: 360px; }
+.testimonial-slider.is-compact .ts-track { min-height: 310px; }
+@media (max-width: 880px) {
+  .testimonial-slider.is-compact { min-height: 380px; }
+  .testimonial-slider.is-compact .ts-track { min-height: 330px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .ts-card { transition: none; }
 }
