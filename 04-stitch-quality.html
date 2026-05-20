@@ -101,20 +101,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="lede-subtext" data-reveal data-delay="3" style="font-size:0.92em; color:#6a6a6a; margin-top:4px;">*Intermittent Tension, Automatic Thread Escapement, no timing belts, and the professional table are not available on 18-inch machines</p>
     </div>
     <aside class="aside" data-reveal data-delay="2">
-      <div class="pullquote-editorial">
-        <span class="quote-glyph" aria-hidden="true">"</span>
-        <p class="quote-body">The Gammill Statler Stitcher has been a workhorse since buying it in 2017. It has always stitched well.</p>
-        <p class="quote-cite"><strong>Thomas Swanson</strong> · Statler Stitcher owner</p>
-      </div>
-      <div class="pullquote-editorial" style="margin-top:32px;">
-        <span class="quote-glyph" aria-hidden="true">"</span>
-        <p class="quote-body">I am amazed at the stitch quality and just at the smooth workings of this machine.</p>
-        <p class="quote-cite"><strong>Mary-Kay Colman</strong> · Statler Supreme owner · Ontario, Canada</p>
-      </div>
-      <div class="pullquote-editorial" style="margin-top:32px;">
-        <span class="quote-glyph" aria-hidden="true">"</span>
-        <p class="quote-body">I have been a Gammill Statler/Ascend owner for 14 years. The tension is great.</p>
-        <p class="quote-cite"><strong>Marie Kelley</strong> · Statler / Ascend owner</p>
+      <div class="testimonial-slider" id="ch4Slider" data-interval="9000" aria-roledescription="carousel" aria-label="Owner testimonials about stitch quality, tension, and smooth movement">
+        <div class="ts-track">
+          <div class="ts-card is-active" role="group" aria-roledescription="slide" aria-label="1 of 4">
+            <div class="pullquote-editorial">
+              <span class="quote-glyph">"</span>
+              <p class="quote-body">The Gammill Statler Stitcher has been a workhorse since buying it in 2017. It has always stitched well.</p>
+              <p class="quote-cite"><strong>Thomas Swanson</strong> &nbsp;·&nbsp; Statler Stitcher owner since 2017</p>
+            </div>
+          </div>
+          <div class="ts-card" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
+            <div class="pullquote-editorial">
+              <span class="quote-glyph">"</span>
+              <p class="quote-body">My machine glides down the tracks so easily. I can move it with 2 fingers!</p>
+              <p class="quote-cite"><strong>Jan Unghire</strong> &nbsp;·&nbsp; Statler owner since 2007</p>
+            </div>
+          </div>
+          <div class="ts-card" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
+            <div class="pullquote-editorial">
+              <span class="quote-glyph">"</span>
+              <p class="quote-body">I am amazed at the stitch quality and just at the smooth workings of this machine.</p>
+              <p class="quote-cite"><strong>Mary-Kay Colman</strong> &nbsp;·&nbsp; Statler Supreme owner · Ontario, Canada</p>
+            </div>
+          </div>
+          <div class="ts-card" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
+            <div class="pullquote-editorial">
+              <span class="quote-glyph">"</span>
+              <p class="quote-body">Gammills are the best - and I have used many brands at different show classes.</p>
+              <p class="quote-cite"><strong>Nancy Hart-Kline</strong> &nbsp;·&nbsp; Classic Plus → Statler retrofit owner</p>
+            </div>
+          </div>
+        </div>
+        <div class="ts-dots" role="tablist" aria-label="Choose testimonial">
+          <button type="button" class="ts-dot is-active" data-target="0" role="tab" aria-selected="true" aria-label="Show testimonial 1"></button>
+          <button type="button" class="ts-dot" data-target="1" role="tab" aria-selected="false" aria-label="Show testimonial 2"></button>
+          <button type="button" class="ts-dot" data-target="2" role="tab" aria-selected="false" aria-label="Show testimonial 3"></button>
+          <button type="button" class="ts-dot" data-target="3" role="tab" aria-selected="false" aria-label="Show testimonial 4"></button>
+        </div>
       </div>
     </aside>
   </div>
@@ -140,6 +163,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
+<!-- Testimonial slider (inline so deploy = one fewer file) -->
+<script defer>
+(function () {
+  function initSlider(root) {
+    var cards = root.querySelectorAll('.ts-card');
+    var dots = root.querySelectorAll('.ts-dot');
+    if (!cards.length || !dots.length) return;
+    var interval = parseInt(root.getAttribute('data-interval'), 10) || 9000;
+    var current = 0, timer = null, paused = false;
+    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function show(idx) {
+      idx = ((idx % cards.length) + cards.length) % cards.length;
+      cards.forEach(function (c, i) {
+        var active = i === idx;
+        c.classList.toggle('is-active', active);
+        c.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+      dots.forEach(function (d, i) {
+        var active = i === idx;
+        d.classList.toggle('is-active', active);
+        d.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      current = idx;
+    }
+    function next() { show(current + 1); }
+    function start() { if (reducedMotion || paused || timer) return; timer = setInterval(next, interval); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); start(); }
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function () { show(i); restart(); });
+    });
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1); restart(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1); restart(); }
+    });
+    root.addEventListener('mouseenter', function () { paused = true; stop(); });
+    root.addEventListener('mouseleave', function () { paused = false; start(); });
+    root.addEventListener('focusin', function () { paused = true; stop(); });
+    root.addEventListener('focusout', function () {
+      if (!root.contains(document.activeElement)) { paused = false; start(); }
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else if (!paused) start();
+    });
+    start();
+  }
+  function init() { document.querySelectorAll('.testimonial-slider').forEach(initSlider); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 <!-- Suppress HubSpot Conversations chat widget on tour pages (must run before the HubSpot loader) -->
 <script>window.hsConversationsSettings = { loadImmediately: false };</script>
 <!-- HubSpot tracking -->
