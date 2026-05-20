@@ -31,7 +31,9 @@ Things deliberately deferred. Not bugs - intentional "later" items.
 
 These have come up but aren't being worked on yet. Pulled here so they don't drift.
 
-- **Three "video" testimonial cards need real YouTube IDs.** Ch 1 (Janet-Lee Santeusanio), Ch 4 (Mary-Kay Colman), Ch 11 (Althea Smith). Currently styled as video cards with a visible play button but no `data-video` attribute - click does nothing. Andrew sources videos, I wire them with the same `data-video="ID"` pattern as Ch 3 (`bs0XZV5U_D4`).
+- **Two "video" testimonial cards need real YouTube IDs.** Ch 4 (Mary-Kay Colman), Ch 11 (Althea Smith). Currently styled as video cards with a visible play button but no `data-video` attribute - click does nothing. Andrew sources videos, I wire them with the same `data-video="ID"` pattern as Ch 3 (`bs0XZV5U_D4`). (Ch 1's old Janet-Lee card was retired in favor of the oil-line Ken Burns crossfade, 2026-05-20.)
+
+- **Avatar-named path choice ("See why Sue chose Gammill" / "See why Stan chose Gammill").** Replacement framing for the planned mind-vs-heart choice screen. Details in `../why-gammill-storybrand/README.md` under "Planned design revision: avatar-named paths." Both avatars need photographs and 1-line bios before the choice screen ships.
 
 - **Photo refresh.** Several chapters share hero photos (Ch 5 / Ch 6 / Ch 12 all use `step5-a.jpg`; Ch 1 / Ch 10 share `step3-c.jpg`). QWC event photos are sitting in `assets/` root waiting to be web-sized for Ch 11 Community. Ch 6 PatternCloud needs a screenshot of the cloud library on the machine touchscreen.
 
