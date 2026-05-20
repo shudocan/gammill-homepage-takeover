@@ -31,7 +31,7 @@ Things deliberately deferred. Not bugs - intentional "later" items.
 
 These have come up but aren't being worked on yet. Pulled here so they don't drift.
 
-- **Two "video" testimonial cards need real YouTube IDs.** Ch 4 (Mary-Kay Colman), Ch 11 (Althea Smith). Currently styled as video cards with a visible play button but no `data-video` attribute - click does nothing. Andrew sources videos, I wire them with the same `data-video="ID"` pattern as Ch 3 (`bs0XZV5U_D4`). (Ch 1's old Janet-Lee card was retired in favor of the oil-line Ken Burns crossfade, 2026-05-20.)
+- **One "video" testimonial card still needs a real YouTube ID.** Ch 11 (Althea Smith). Currently styled as a video card with a visible play button but no `data-video` attribute - click does nothing. Andrew sources the video, I wire it with the same `data-video="ID"` pattern as Ch 3 (`bs0XZV5U_D4`). (Ch 1's Janet-Lee card retired for the oil-line Ken Burns crossfade, 2026-05-20. Ch 4's Mary-Kay card retired for a 3-card editorial pullquote stack — Thomas Swanson, Mary-Kay Colman, Marie Kelley — same day.)
 
 - **Avatar-named path choice ("See why Sue chose Gammill" / "See why Stan chose Gammill").** Replacement framing for the planned mind-vs-heart choice screen. Details in `../why-gammill-storybrand/README.md` under "Planned design revision: avatar-named paths." Both avatars need photographs and 1-line bios before the choice screen ships.
 
