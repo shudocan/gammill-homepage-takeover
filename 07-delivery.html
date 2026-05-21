@@ -110,10 +110,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <aside class="aside" data-reveal data-delay="2">
-      <div class="pullquote-editorial">
-        <span class="quote-glyph">"</span>
-        <p class="quote-body">Nathan arrived at the stated time and stayed 7-8 hours taking out my old machine and installing the new one. He went over everything with me. He was amazingly patient and kind. I have NEVER had anyone spend so much time answering questions and showing me how things worked!</p>
-        <p class="quote-cite"><strong>Marylin Angeloff</strong> &nbsp;·&nbsp; New Vision 22" owner</p>
+      <div class="testimonial-slider is-image-slides" id="ch7Slider" data-interval="9000" aria-roledescription="carousel" aria-label="Owner reviews of Gammill delivery and setup">
+        <div class="ts-track">
+          <div class="ts-card is-active" role="group" aria-roledescription="slide" aria-label="1 of 4">
+            <img src="assets/web/testimonial-delivery-1-salina-bailey.png" alt="Salina Bailey - Google review of her Gammill delivery and setup with Nathan" />
+          </div>
+          <div class="ts-card" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
+            <img src="assets/web/testimonial-delivery-2-brenda-matthews.png" alt="Brenda Matthews - Google review of her pre-loved Gammill Statler setup with Karl" />
+          </div>
+          <div class="ts-card" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
+            <img src="assets/web/testimonial-delivery-4-jenn-tincher.png" alt="Jenn Tincher - Google review of her Vision 2 installation by Dylan" />
+          </div>
+          <div class="ts-card" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
+            <img src="assets/web/testimonial-delivery-5-sandy-carter.png" alt="Sandy Carter - Google review of her new Gammill Statler setup by Dylan and Clayton" />
+          </div>
+        </div>
+        <div class="ts-dots" role="tablist" aria-label="Choose testimonial">
+          <button type="button" class="ts-dot is-active" data-target="0" role="tab" aria-selected="true" aria-label="Show testimonial 1"></button>
+          <button type="button" class="ts-dot" data-target="1" role="tab" aria-selected="false" aria-label="Show testimonial 2"></button>
+          <button type="button" class="ts-dot" data-target="2" role="tab" aria-selected="false" aria-label="Show testimonial 3"></button>
+          <button type="button" class="ts-dot" data-target="3" role="tab" aria-selected="false" aria-label="Show testimonial 4"></button>
+        </div>
       </div>
     </aside>
   </div>
@@ -139,6 +156,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
+<!-- Testimonial slider (inline so deploy = one fewer file) -->
+<script defer>
+(function () {
+  function initSlider(root) {
+    var cards = root.querySelectorAll('.ts-card');
+    var dots = root.querySelectorAll('.ts-dot');
+    if (!cards.length || !dots.length) return;
+    var interval = parseInt(root.getAttribute('data-interval'), 10) || 9000;
+    var current = 0, timer = null, paused = false;
+    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function show(idx) {
+      idx = ((idx % cards.length) + cards.length) % cards.length;
+      cards.forEach(function (c, i) {
+        var active = i === idx;
+        c.classList.toggle('is-active', active);
+        c.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+      dots.forEach(function (d, i) {
+        var active = i === idx;
+        d.classList.toggle('is-active', active);
+        d.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      current = idx;
+    }
+    function next() { show(current + 1); }
+    function start() { if (reducedMotion || paused || timer) return; timer = setInterval(next, interval); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); start(); }
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function () { show(i); restart(); });
+    });
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1); restart(); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1); restart(); }
+    });
+    root.addEventListener('mouseenter', function () { paused = true; stop(); });
+    root.addEventListener('mouseleave', function () { paused = false; start(); });
+    root.addEventListener('focusin', function () { paused = true; stop(); });
+    root.addEventListener('focusout', function () {
+      if (!root.contains(document.activeElement)) { paused = false; start(); }
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else if (!paused) start();
+    });
+    start();
+  }
+  function init() { document.querySelectorAll('.testimonial-slider').forEach(initSlider); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 <!-- Suppress HubSpot Conversations chat widget on tour pages (must run before the HubSpot loader) -->
 <script>window.hsConversationsSettings = { loadImmediately: false };</script>
 <!-- HubSpot tracking -->

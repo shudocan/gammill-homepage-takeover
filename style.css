@@ -1353,6 +1353,30 @@ a.nav-pill-link:hover {
   .testimonial-slider.is-compact { min-height: 380px; }
   .testimonial-slider.is-compact .ts-track { min-height: 330px; }
 }
+/* Image-slides variant — for sliders that display screenshot/PNG cards
+   (e.g. Ch 7, where slides are Google-review screenshots). Sized to
+   accommodate the tallest image in the set (~720px). */
+.testimonial-slider.is-image-slides { min-height: 740px; }
+.testimonial-slider.is-image-slides .ts-track { min-height: 690px; }
+.testimonial-slider.is-image-slides .ts-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.testimonial-slider.is-image-slides .ts-card img {
+  display: block;
+  max-width: 100%;
+  max-height: 700px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+@media (max-width: 880px) {
+  .testimonial-slider.is-image-slides { min-height: 760px; }
+  .testimonial-slider.is-image-slides .ts-track { min-height: 710px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .ts-card { transition: none; }
 }
