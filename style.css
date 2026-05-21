@@ -1383,8 +1383,10 @@ a.nav-pill-link:hover {
 
 /* ---------- Training-network diagram (Ch 8) ---------- */
 /* Central owner silhouette surrounded by 4 labeled training-resource
-   silhouettes (N/S/E/W). Inline SVG, no image assets. */
+   silhouettes (N/S/E/W), connected by an outer dashed ring + an inner
+   diamond linking the four helpers. Inline SVG, no image assets. */
 .training-network {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto auto;
@@ -1396,7 +1398,17 @@ a.nav-pill-link:hover {
   margin: 2.4em auto 1em;
   padding: 1em 0.5em;
 }
+.tn-decoration {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
 .tn-node {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1447,6 +1459,7 @@ a.nav-pill-link:hover {
     row-gap: 1.5em;
   }
   .tn-empty { display: none; }
+  .tn-decoration { display: none; }
 }
 
 /* ---------- Visual production placeholder ---------- */
