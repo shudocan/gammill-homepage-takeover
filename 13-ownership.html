@@ -116,12 +116,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
 
-      <p data-reveal data-delay="3" style="margin-top: 32px;">Want to see whether your machine could earn itself back?</p>
-      <div data-reveal data-delay="3" style="margin:0.4em 0 0;">
-        <button type="button" class="bpb-trigger" aria-haspopup="dialog" aria-controls="bpModal">
-          Start the Business Plan Tool <span class="bpb-arrow">→</span>
-        </button>
-      </div>
     </div>
     <!-- Conversion-chapter video testimonial reel goes here (pending production).
          Andrew: a strong owner-voice reel — multiple short clips, "I bought,
@@ -136,7 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p style="color: var(--muted); margin: 0;">You've walked through the whole machine. Now let's get one in your studio.</p>
     <div class="final-cta-row">
       <a href="https://gammill.com/machines/request-a-demo/" class="flow-btn primary">See a Gammill in person →</a>
-      <a href="https://meetings.hubspot.com/gammill-sales" class="flow-btn ghost">Talk to an Advisor</a>
+      <a href="https://meetings.hubspot.com/gammill-sales" class="flow-btn primary">Talk to an Advisor →</a>
     </div>
     <p style="font-size: 13px; color: var(--muted); margin-top: 16px;">Or <a href="https://gammill.com/machines/buyers-guide-2/compare-machines/">compare all four machines side-by-side</a>.</p>
   </div>
@@ -159,25 +153,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div>© 2026 Gammill, Inc. · Built in West Plains, Missouri</div>
 </footer>
 
-<!-- Business Plan Builder modal (shared markup, loaded only on Ch 12 + Ch 13) -->
-<div class="bp-overlay" id="bpOverlay"></div>
-<div class="bp-modal" id="bpModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="bpTitle">
-  <div class="bp-dialog">
-    <div class="bp-header">
-      <h3 class="bp-title" id="bpTitle">Gammill Business Plan Tool</h3>
-      <button class="bp-close" id="bpCloseBtn" aria-label="Close">✕</button>
-    </div>
-    <div class="bp-body" id="bpBody">
-      <!-- HubSpot form embed (v1.2) -->
-      <script src="https://js.hsforms.net/forms/embed/20410581.js" defer></script>
-      <div class="hs-form-frame" data-region="na1" data-form-id="245d100e-3953-4f96-89fe-e64e3f84c9d1" data-portal-id="20410581"></div>
-    </div>
-  </div>
-</div>
-
 <script src="reveal.js" defer></script>
 <script src="editor.js" defer></script>
-<script src="bpb-modal.js" defer></script>
 <!-- Suppress HubSpot Conversations chat widget on tour pages (must run before the HubSpot loader) -->
 <script>window.hsConversationsSettings = { loadImmediately: false };</script>
 <!-- HubSpot tracking -->
