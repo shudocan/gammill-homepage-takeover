@@ -1675,3 +1675,24 @@ body.bp-lock {
 @media (prefers-reduced-motion: reduce) {
   .kb-slide { transform: none !important; animation-timing-function: ease-in-out; }
 }
+
+/* ======= Progress bar as a subtle chapter hub (enhanced by tour-nav.js) ======= */
+/* tour-nav.js swaps each <span class="seg"> for an <a class="seg">. The visible
+   bar stays the same slim height; padding gives a usable click/tap target. */
+.progress-bar a.seg {
+  display: block;
+  box-sizing: content-box;
+  padding: 10px 0;            /* generous hit area above/below the slim bar */
+  margin: -10px 0;            /* collapse it back so the bar height is unchanged */
+  background-clip: content-box;
+  cursor: pointer;
+  text-decoration: none;
+}
+.progress-bar a.seg:hover {
+  background-color: var(--amber);
+}
+.progress-bar a.seg:focus-visible {
+  background-color: var(--amber);
+  outline: 2px solid var(--amber-hover);
+  outline-offset: 3px;
+}
