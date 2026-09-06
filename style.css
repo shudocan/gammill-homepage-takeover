@@ -513,23 +513,22 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
 .flow-btn-back {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--rad-pill);
   background: transparent;
-  color: var(--muted);
-  font-size: 20px;
-  line-height: 1;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.2;
   text-decoration: none;
-  border: 1px solid var(--border);
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  border: 1.5px solid var(--ink);
+  transition: background 0.15s, color 0.15s;
   flex: 0 0 auto;
+  white-space: nowrap;
 }
 .flow-btn-back:hover {
-  background: var(--bg-2);
-  color: var(--ink);
-  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
 }
 .flow-btn-back:focus-visible {
   outline: 2px solid var(--amber);
