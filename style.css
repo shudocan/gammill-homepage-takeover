@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Open+Sans:wght@400;600;700&family=Raleway:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@700;800;900&display=swap');
 
 /* Real Gammill brand palette - sourced from gammillpenn theme stylesheet */
 :root {
@@ -403,7 +403,7 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
   margin: 0 0 8px;
 }
 .pullquote-text {
-  font-size: 1.18rem; font-style: italic;
+  font-size: 1.18rem;
   color: var(--ink); line-height: 1.5;
   margin: 0 0 22px;
 }
@@ -561,8 +561,7 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
 }
 .mission-statement {
   font-family: 'Open Sans', sans-serif;
-  font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.15rem;
   line-height: 1.55;
   color: var(--ink);
@@ -688,8 +687,7 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
 .variant-note {
   text-align: center;
   margin: 40px 0 0;
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   color: var(--muted);
 }
@@ -749,18 +747,16 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
 
 /* ======================================================================
    EDITORIAL DESIGN SYSTEM
-   Heritage magazine aesthetic - Fraunces serif italic, chapter numerals,
+   Heritage magazine aesthetic - site faces only (Open Sans / Raleway 800), chapter numerals,
    drop caps, editorial pull quotes, rule-bordered stats, ken-burns,
    scroll-triggered reveals.
    ====================================================================== */
 
-/* Fraunces utilities */
+/* Former Fraunces utilities - now map to the site's Open Sans */
 .serif,
 .serif-italic {
-  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
-  font-feature-settings: "ss01", "ss02";
+  font-family: 'Open Sans', sans-serif;
 }
-.serif-italic { font-style: italic; font-weight: 400; }
 
 /* Chapter kicker - replaces .eyebrow on heroes */
 .kicker-rule {
@@ -791,8 +787,7 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
   margin-bottom: 0.15em;
 }
 .hero.with-image .lede {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: clamp(1.15rem, 1.6vw, 1.4rem);
   line-height: 1.45;
@@ -809,9 +804,8 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
   right: 4vw;
   top: 50%;
   transform: translateY(-50%);
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
   font-size: clamp(220px, 30vw, 440px);
   line-height: 0.85;
   color: var(--amber);
@@ -843,9 +837,8 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
 /* Drop cap - opening paragraph of a body section */
 .opener { margin-bottom: 1.1em; }
 .opener .dropcap {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
   font-size: 4.8em;
   line-height: 0.78;
   float: left;
@@ -869,8 +862,8 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
 }
 .stat-editorial:last-child { border-right: none; }
 .stat-editorial .num {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
   font-size: clamp(2.2rem, 3.4vw, 3.4rem);
   color: var(--ink);
   line-height: 0.9;
@@ -904,9 +897,8 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
 .pullquote-editorial .quote-glyph {
   position: absolute; top: -22px; left: -4px;
   background: var(--bg);
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
   font-size: 4.2rem;
   line-height: 1;
   color: var(--amber);
@@ -914,8 +906,7 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
   letter-spacing: -0.04em;
 }
 .pullquote-editorial .quote-body {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: clamp(1.35rem, 2.1vw, 1.85rem);
   line-height: 1.32;
@@ -958,8 +949,7 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
   border-radius: 0;
 }
 .deeper-link {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 500;
   font-size: 1.15rem;
 }
@@ -1023,8 +1013,7 @@ a:hover { color: var(--amber); }   /* gammill.com: a:hover { color: var(--orange
 
 /* Refined nav-pill - quieter */
 .nav-pill {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 500;
   text-transform: none;
   letter-spacing: 0.02em;
@@ -1102,8 +1091,7 @@ a.nav-pill-link:hover {
   padding: 10px 18px;
   color: rgba(255,255,255,0.78);
   text-decoration: none;
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   font-weight: 400;
   transition: background 0.12s, color 0.12s;
@@ -1121,7 +1109,6 @@ a.nav-pill-link:hover {
   display: inline-block;
   width: 26px;
   color: rgba(255,255,255,0.42);
-  font-style: italic;
   font-size: 14px;
   flex-shrink: 0;
 }
@@ -1487,7 +1474,6 @@ a.nav-pill-link:hover {
   font-family: 'Open Sans', sans-serif;
   font-size: 0.92em;
   color: #5a5a5a;
-  font-style: italic;
   line-height: 1.5;
   margin: 0;
 }
@@ -1669,7 +1655,6 @@ body.bp-lock {
   font-size: 0.86em;
   color: #6a6a6a;
   font-family: 'Open Sans', sans-serif;
-  font-style: italic;
   text-align: center;
 }
 .kenburns-caption strong { color: #1a1a1a; font-style: normal; }
